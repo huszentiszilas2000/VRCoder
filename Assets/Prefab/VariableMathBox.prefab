@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3301
+  m_VersionIndex: 3310
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1791,10 +1791,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variableFirst: {fileID: 0}
   variableSecond: {fileID: 0}
-  mathOperatorType: 0
+  mathOperatorType: 3
   value1: 
   value2: 
-  spawn: 0
+  DebugChange: 0
 --- !u!114 &7022234969110223199
 MonoBehaviour:
   m_ObjectHideFlags: 0

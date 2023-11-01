@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1623704912640555798}
   - component: {fileID: 989036938815343586}
   - component: {fileID: 4205290776394580011}
+  - component: {fileID: 8777618395653551801}
   m_Layer: 0
   m_Name: SidePlugBooleanSecond
   m_TagString: Untagged
@@ -114,10 +115,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8777618395653551801}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeFrezee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8777618395653551801}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeUnfreeze
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -150,6 +175,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4e023af5360a81446a97dbd2b2775fd0, type: 2}
+--- !u!114 &8777618395653551801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623704912640555799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d889ea3e5b2769749a6c38fa7a5009e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropeObject: {fileID: 0}
 --- !u!1 &3534677578553365621
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,10 +599,9 @@ GameObject:
   - component: {fileID: 6100843156750114350}
   - component: {fileID: 6100843156750114351}
   - component: {fileID: 6100843156750114348}
-  - component: {fileID: 5113038297026462234}
-  - component: {fileID: 542712224402342301}
   - component: {fileID: 4353415354149433035}
   - component: {fileID: 8558316823600392341}
+  - component: {fileID: 4528186899023027427}
   m_Layer: 0
   m_Name: OutputBooleanPlug
   m_TagString: Untagged
@@ -637,108 +674,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5113038297026462234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100843156750114349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 4294967272
-  m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
-  m_StartingSelectedInteractable: {fileID: 0}
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ShowInteractableHoverMeshes: 1
-  m_InteractableHoverMeshMaterial: {fileID: 0}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
-  m_SocketActive: 1
-  m_InteractableHoverScale: 1
-  m_RecycleDelayTime: 1
---- !u!114 &542712224402342301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100843156750114349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 4294967290
-  m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
-  m_StartingSelectedInteractable: {fileID: 0}
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ShowInteractableHoverMeshes: 1
-  m_InteractableHoverMeshMaterial: {fileID: 0}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
-  m_SocketActive: 1
-  m_InteractableHoverScale: 1
-  m_RecycleDelayTime: 1
 --- !u!114 &4353415354149433035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,7 +691,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967272
+    m_Bits: 4294967240
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -768,10 +703,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4528186899023027427}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeFrezee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4528186899023027427}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeUnfreeze
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -804,6 +763,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4e023af5360a81446a97dbd2b2775fd0, type: 2}
+--- !u!114 &4528186899023027427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100843156750114349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d889ea3e5b2769749a6c38fa7a5009e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropeObject: {fileID: 0}
 --- !u!1 &6847200219699098831
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +789,7 @@ GameObject:
   - component: {fileID: 6847200219699098830}
   - component: {fileID: 2734195162115271577}
   - component: {fileID: 2891571929240858795}
+  - component: {fileID: 7965698931279829948}
   m_Layer: 0
   m_Name: SidePlugVariable
   m_TagString: Untagged
@@ -918,10 +891,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7965698931279829948}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeFrezee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7965698931279829948}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeUnfreeze
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -954,6 +951,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4e023af5360a81446a97dbd2b2775fd0, type: 2}
+--- !u!114 &7965698931279829948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847200219699098831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d889ea3e5b2769749a6c38fa7a5009e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropeObject: {fileID: 0}
 --- !u!1 &7851534005104522828
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +977,7 @@ GameObject:
   - component: {fileID: 7851534005104522829}
   - component: {fileID: 4259376474315349964}
   - component: {fileID: 3453960577215388566}
+  - component: {fileID: 3018704471315907778}
   m_Layer: 0
   m_Name: SidePlugVariableSecond
   m_TagString: Untagged
@@ -1068,10 +1079,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3018704471315907778}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeFrezee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3018704471315907778}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeUnfreeze
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1104,6 +1139,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4e023af5360a81446a97dbd2b2775fd0, type: 2}
+--- !u!114 &3018704471315907778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851534005104522828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d889ea3e5b2769749a6c38fa7a5009e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropeObject: {fileID: 0}
 --- !u!1 &7877017375297228372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1166,8 @@ GameObject:
   - component: {fileID: 7877017375297228377}
   - component: {fileID: 7877017375297228374}
   - component: {fileID: 7877017375297228375}
+  - component: {fileID: 5142158880072437545}
+  - component: {fileID: 2289819851086714848}
   m_Layer: 0
   m_Name: BooleanBox
   m_TagString: Untagged
@@ -1840,7 +1890,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3307
+  m_VersionIndex: 3325
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1937,6 +1987,49 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5142158880072437545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7877017375297228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab7ea1e26e3b7846bef581d2659c55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VariableConnector: {fileID: 6847200219699098831}
+  SecondVariableConnector: {fileID: 7851534005104522828}
+  BooleanConnector: {fileID: 7877017376523167717}
+  SecondBooleanConnector: {fileID: 1623704912640555799}
+  OutBooleanConnector: {fileID: 6100843156750114349}
+  BooleanConnected: 0
+  SecondBooleanConnected: 0
+  VariableConnected: 0
+  SecondVeriableConnected: 0
+  OutBooleanConnected: 0
+  ComponentName: {fileID: 7877017375668426914}
+--- !u!114 &2289819851086714848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7877017375297228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec68ccb7d7fec0e49a86f85fb6c425a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableFirst: {fileID: 0}
+  variableSecond: {fileID: 0}
+  booleanOperatorType: 0
+  value1: 
+  value2: 
+  bool1: 0
+  bool2: 0
+  DebugChange: 0
 --- !u!1 &7877017375668426915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2215,7 @@ GameObject:
   - component: {fileID: 7877017376523167716}
   - component: {fileID: 2819717146048369615}
   - component: {fileID: 2888799495843979366}
+  - component: {fileID: 8537366506558526921}
   m_Layer: 0
   m_Name: SidePlugBoolean
   m_TagString: Untagged
@@ -2223,10 +2317,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8537366506558526921}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeFrezee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8537366506558526921}
+        m_TargetAssemblyTypeName: RopeSocket, Assembly-CSharp
+        m_MethodName: RopeUnfreeze
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2259,6 +2377,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4e023af5360a81446a97dbd2b2775fd0, type: 2}
+--- !u!114 &8537366506558526921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7877017376523167717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d889ea3e5b2769749a6c38fa7a5009e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropeObject: {fileID: 0}
 --- !u!1 &7877017377153850108
 GameObject:
   m_ObjectHideFlags: 0

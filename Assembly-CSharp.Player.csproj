@@ -105,6 +105,11 @@
     <Compile Include="Assets\Scripts\Variable\GetVariableGameObject.cs" />
     <Compile Include="Assets\Scripts\Operators\Math\AddTogether.cs" />
     <Compile Include="Assets\Scripts\Variable\DeleteVariable.cs" />
+    <Compile Include="Assets\Scripts\Operators\BooleanOperators.cs" />
+    <Compile Include="Assets\Scripts\Operators\BooleanOperatorConnectors.cs" />
+    <Compile Include="Assets\Scripts\List\ListComponents.cs" />
+    <Compile Include="Assets\Scripts\List\ListComponentConnectors.cs" />
+    <Compile Include="Assets\Scripts\List\ListScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

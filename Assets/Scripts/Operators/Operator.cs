@@ -7,9 +7,16 @@ public class Operator : MonoBehaviour
     public GameObject variableFirst;
     public GameObject variableSecond;
 
+    public static System.Random random = new System.Random();
+
     public static string GetValueString(GameObject gameObject)
     {
         return gameObject.GetComponentInParent<IResult>().GetResult().ToString();
+    }
+
+    public static bool GetBool(GameObject gameObject)
+    {
+        return gameObject.GetComponentInParent<IResultBoolean>().GetResult();
     }
 
     public static Type GetObjectToConvert(GameObject gameObject, GameObject gameObject2)

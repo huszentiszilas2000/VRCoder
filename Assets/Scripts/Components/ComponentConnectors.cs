@@ -90,6 +90,18 @@ public class ComponentConnectors : MonoBehaviour
                     ComponentName.text = ">Loop Until";
                     break;
                 }
+            case ComponentType.WaitForSecond:
+                {
+                    BoolConnector.SetActive(false);
+                    VariableConnector.SetActive(true);
+                    SecondVariableConnector.SetActive(false);
+                    PreviousComponentConnector.SetActive(true);
+                    InsideCallConnector.SetActive(false);
+                    SecondInsideCallConnector.SetActive(false);
+                    NextCallConnector.SetActive(true);
+                    ComponentName.text = "WaitForSec..";
+                    break;
+                }
             case ComponentType.SetVariable:
                 {
                     BoolConnector.SetActive(false);
