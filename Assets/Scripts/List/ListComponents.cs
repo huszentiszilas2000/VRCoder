@@ -12,7 +12,9 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
     public Type typeOf;
 
     GameObject listCorrectObject;
+    GameObject nextCallCorrectObject;
     GameObject variableCorrectObject;
+    GameObject secondvariableCorrectObject;
     ListComponentConnectors listComponentConnectors;
 
     public bool DebugChange = false;
@@ -22,18 +24,248 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
         switch (listComponentType)
         {
             case ListComponentType.Add:
+                StartCoroutine(AddToList());
                 break;
             case ListComponentType.Delete:
+                StartCoroutine(DeleteFromList());
                 break;
             case ListComponentType.DeleteAll:
+                StartCoroutine(DeleteAllFromList());
                 break;
             case ListComponentType.Replace:
+                StartCoroutine(ReplaceInList());
                 break;
             case ListComponentType.Insert:
+                StartCoroutine(InsertIntoList());
                 break;
             default:
                 break;
         }
+
+        yield return null;
+    }
+
+    public IEnumerator AddToList()
+    {
+        listCorrectObject = listComponentConnectors.ListConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (listCorrectObject == null)
+        {
+            Debug.Log("List Component: List is missing");
+            yield break;
+        }
+
+        variableCorrectObject = listComponentConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (variableCorrectObject == null)
+        {
+            Debug.Log("List Component: Variable is missing");
+            yield break;
+        }
+
+        if (listCorrectObject.GetComponentInParent<ListScript>() == null)
+        {
+            Debug.Log("List Component: Wrong type attached");
+            yield break;
+        }
+
+        if (variableCorrectObject.GetComponentInParent<IResult>() == null)
+        {
+            Debug.Log("List Component: No value is in Variable");
+            yield break;
+        }
+
+        listCorrectObject.GetComponentInParent<ListScript>().variables.Add(variableCorrectObject.GetComponentInParent<IResult>().GetResult());
+
+        NextCall();
+
+        yield return null;
+    }
+
+    public IEnumerator DeleteFromList()
+    {
+        listCorrectObject = listComponentConnectors.ListConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (listCorrectObject == null)
+        {
+            Debug.Log("List Component: List is missing");
+            yield break;
+        }
+
+        variableCorrectObject = listComponentConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (variableCorrectObject == null)
+        {
+            Debug.Log("List Component: Variable is missing");
+            yield break;
+        }
+
+        if (listCorrectObject.GetComponentInParent<ListScript>() == null)
+        {
+            Debug.Log("List Component: Wrong type attached");
+            yield break;
+        }
+
+        if (variableCorrectObject.GetComponentInParent<IResult>() == null)
+        {
+            Debug.Log("List Component: No value is in Variable");
+            yield break;
+        }
+
+        if (variableCorrectObject.GetComponentInParent<IResult>().GetResult().GetType() != typeof(double))
+        {
+            Debug.LogError("List Component: Wrong type!");
+            yield break;
+        }
+
+        if ((double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() < 0)
+        {
+            Debug.LogError("List Component: Negative is not acceptable!");
+            yield break;
+        }
+
+        listCorrectObject.GetComponentInParent<ListScript>().variables.RemoveAt((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult());
+
+        NextCall();
+
+        yield return null;
+    }
+
+    public IEnumerator DeleteAllFromList()
+    {
+        listCorrectObject = listComponentConnectors.ListConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (listCorrectObject == null)
+        {
+            Debug.Log("List Component: List is missing");
+            yield break;
+        }
+
+        if (listCorrectObject.GetComponentInParent<ListScript>() == null)
+        {
+            Debug.Log("List Component: Wrong type attached");
+            yield break;
+        }
+
+        listCorrectObject.GetComponentInParent<ListScript>().variables.RemoveRange(0, listCorrectObject.GetComponentInParent<ListScript>().variables.Count);
+
+        NextCall();
+
+        yield return null;
+    }
+
+    public IEnumerator ReplaceInList()
+    {
+        listCorrectObject = listComponentConnectors.ListConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (listCorrectObject == null)
+        {
+            Debug.Log("List Component: List is missing");
+            yield break;
+        }
+
+        if (listCorrectObject.GetComponentInParent<ListScript>() == null)
+        {
+            Debug.Log("List Component: Wrong type attached");
+            yield break;
+        }
+
+        variableCorrectObject = listComponentConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (variableCorrectObject == null)
+        {
+            Debug.Log("List Component: Variable is missing");
+            yield break;
+        }
+
+        if (variableCorrectObject.GetComponentInParent<IResult>() == null)
+        {
+            Debug.Log("List Component: No value is in Variable");
+            yield break;
+        }
+
+        if (variableCorrectObject.GetComponentInParent<IResult>().GetResult().GetType() != typeof(double))
+        {
+            Debug.LogError("List Component: Wrong type!");
+            yield break;
+        }
+
+        if ((double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() < 0 || (double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() == 0)
+        {
+            Debug.LogError("List Component: Negative or 0 is not acceptable!");
+            yield break;
+        }
+
+        secondvariableCorrectObject = listComponentConnectors.SecondVariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (secondvariableCorrectObject == null)
+        {
+            Debug.Log("List Component: Variable is missing");
+            yield break;
+        }
+
+        if (secondvariableCorrectObject.GetComponentInParent<IResult>() == null)
+        {
+            Debug.Log("List Component: No value is in Variable");
+            yield break;
+        }
+
+        listCorrectObject.GetComponentInParent<ListScript>().variables.Insert((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult(), secondvariableCorrectObject.GetComponentInParent<IResult>().GetResult());
+        listCorrectObject.GetComponentInParent<ListScript>().variables.RemoveAt((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult() + 1);
+
+        NextCall();
+
+        yield return null;
+    }
+
+    public IEnumerator InsertIntoList()
+    {
+        listCorrectObject = listComponentConnectors.ListConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (listCorrectObject == null)
+        {
+            Debug.Log("List Component: List is missing");
+            yield break;
+        }
+
+        if (listCorrectObject.GetComponentInParent<ListScript>() == null)
+        {
+            Debug.Log("List Component: Wrong type attached");
+            yield break;
+        }
+
+        variableCorrectObject = listComponentConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (variableCorrectObject == null)
+        {
+            Debug.Log("List Component: Variable is missing");
+            yield break;
+        }
+
+        if (variableCorrectObject.GetComponentInParent<IResult>() == null)
+        {
+            Debug.Log("List Component: No value is in Variable");
+            yield break;
+        }
+
+        if (variableCorrectObject.GetComponentInParent<IResult>().GetResult().GetType() != typeof(double))
+        {
+            Debug.LogError("List Component: Wrong type!");
+            yield break;
+        }
+
+        if ((double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() < 0 || (double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() == 0)
+        {
+            Debug.LogError("List Component: Negative or 0 is not acceptable!");
+            yield break;
+        }
+
+        secondvariableCorrectObject = listComponentConnectors.SecondVariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (secondvariableCorrectObject == null)
+        {
+            Debug.Log("List Component: Variable is missing");
+            yield break;
+        }
+
+        if (secondvariableCorrectObject.GetComponentInParent<IResult>() == null)
+        {
+            Debug.Log("List Component: No value is in Variable");
+            yield break;
+        }
+
+        listCorrectObject.GetComponentInParent<ListScript>().variables.Insert((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult(), secondvariableCorrectObject.GetComponentInParent<IResult>().GetResult());
+
+        NextCall();
 
         yield return null;
     }
@@ -81,7 +313,7 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
             return null;
         }
 
-        return listCorrectObject.GetComponentInParent<ListScript>().GetItem(variableCorrectObject.GetComponentInParent<IResult>().ToString());
+        return listCorrectObject.GetComponentInParent<ListScript>().GetItem(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString());
     }
 
     public System.Object GetItemPlace()
@@ -112,7 +344,7 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
             return null;
         }
 
-        return listCorrectObject.GetComponentInParent<ListScript>().GetItemPlace(variableCorrectObject.GetComponentInParent<IResult>().ToString());
+        return listCorrectObject.GetComponentInParent<ListScript>().GetItemPlace(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString());
     }
     public System.Object GetLength()
     {
@@ -145,6 +377,13 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
             OnChangeListComponentPressed();
             DebugChange = false;
         }
+    }
+
+    public void NextCall()
+    {
+        nextCallCorrectObject = listComponentConnectors.NextComponentConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (nextCallCorrectObject != null)
+            StartCoroutine(nextCallCorrectObject.GetComponent<IComponent>().RunComponent());
     }
 
     public void OnChangeListComponentPressed()

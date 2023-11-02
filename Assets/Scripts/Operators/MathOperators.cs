@@ -119,6 +119,12 @@ public class MathOperators : Operator, IResult
 
         SetVariables();
 
+        if(double.Parse(value2) == 0)
+        {
+            Debug.LogError("Dividing with zero!");
+            return null;
+        }
+
         if (typeOf == typeof(double))
         {
             return (double.Parse(value1) / double.Parse(value2));
