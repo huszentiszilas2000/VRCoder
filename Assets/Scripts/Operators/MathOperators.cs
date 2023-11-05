@@ -42,7 +42,7 @@ public class MathOperators : Operator, IResult
     {
         value1 = Operator.GetValueString(variableCorrectObject.gameObject);
         value2 = Operator.GetValueString(secondvariableCorrectObject.gameObject);
-        typeOf = Operator.GetObjectToConvert(variableCorrectObject.gameObject, secondvariableCorrectObject.gameObject);
+        typeOf = Operator.GetObjectsToConvert(variableCorrectObject.gameObject, secondvariableCorrectObject.gameObject);
     }
     System.Object Add()
     {
@@ -146,7 +146,7 @@ public class MathOperators : Operator, IResult
 
         SetVariables();
 
-        if (Operator.GetObjectToConvert(variableCorrectObject, secondvariableCorrectObject) == typeof(double))
+        if (Operator.GetObjectsToConvert(variableCorrectObject, secondvariableCorrectObject) == typeof(double))
         {
             double d1 = double.Parse(value1);
             double d2 = double.Parse(value2);

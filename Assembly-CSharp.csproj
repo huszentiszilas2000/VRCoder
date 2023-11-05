@@ -63,11 +63,8 @@
     <Compile Include="Assets\Scripts\StartButton.cs" />
     <Compile Include="Assets\Scripts\Interface\IComponent.cs" />
     <Compile Include="Assets\Scripts\Components\LoopUntil.cs" />
-    <Compile Include="Assets\Scripts\Operators\Boolean\GreaterThan.cs" />
-    <Compile Include="Assets\Scripts\Operators\Math\Subtract.cs" />
     <Compile Include="Assets\Scripts\Components\DebuggingComponent.cs" />
     <Compile Include="Assets\Scripts\XRRemoveSameSideCollider.cs" />
-    <Compile Include="Assets\Scripts\Operators\Math\RandomNumber.cs" />
     <Compile Include="Assets\Scripts\Variable\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\Variable\AddVariableScript.cs" />
     <Compile Include="Assets\Scripts\Interface\IResultBoolean.cs" />
@@ -78,19 +75,16 @@
     <Compile Include="Assets\FPS.cs" />
     <Compile Include="Assets\Scripts\Variable\VariableScript.cs" />
     <Compile Include="Assets\Scripts\Components\SetVariable.cs" />
-    <Compile Include="Assets\Scripts\Operators\Boolean\LessThan.cs" />
     <Compile Include="Assets\Scripts\Operators\BooleanOperatorConnectors.cs" />
     <Compile Include="Assets\Scripts\Operators\MathOperatorConnectors.cs" />
     <Compile Include="Assets\Scripts\List\ListScript.cs" />
     <Compile Include="Assets\Scripts\List\ListComponents.cs" />
     <Compile Include="Assets\Scripts\Components\Components.cs" />
-    <Compile Include="Assets\Scripts\Operators\Math\Multiple.cs" />
     <Compile Include="Assets\Scripts\Operators\BooleanOperators.cs" />
     <Compile Include="Assets\Scripts\XRRemoveGrabDistance.cs" />
     <Compile Include="Assets\ScriptsCoroutine\TesztingScript.cs" />
     <Compile Include="Assets\Scripts\Interface\IResult.cs" />
     <Compile Include="Assets\Scripts\Variable\VariableWriter.cs" />
-    <Compile Include="Assets\Scripts\Operators\Boolean\Equals.cs" />
     <Compile Include="Assets\Scripts\Components\Loop.cs" />
     <Compile Include="Assets\Scripts\List\ListComponentConnectors.cs" />
     <Compile Include="Assets\PlayerController.cs" />
@@ -98,18 +92,14 @@
     <Compile Include="Assets\ScriptsCoroutine\TesztScript.cs" />
     <Compile Include="Assets\Scripts\Components\ComponentConnectors.cs" />
     <Compile Include="Assets\RopeMeshRenderer.cs" />
-    <Compile Include="Assets\Scripts\Operators\Boolean\And.cs" />
     <Compile Include="Assets\ScriptsCoroutine\TesztingScript1.cs" />
     <Compile Include="Assets\Scripts\Components\Component.cs" />
     <Compile Include="Assets\Scripts\Components\ComponentInside.cs" />
-    <Compile Include="Assets\Scripts\Operators\Boolean\Not.cs" />
     <Compile Include="Assets\Scripts\Components\IfElseComponent.cs" />
-    <Compile Include="Assets\Scripts\Operators\Math\Divide.cs" />
-    <Compile Include="Assets\Scripts\Operators\Boolean\Or.cs" />
     <Compile Include="Assets\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Variable\GetVariableGameObject.cs" />
-    <Compile Include="Assets\Scripts\Operators\Math\AddTogether.cs" />
     <Compile Include="Assets\Scripts\Variable\DeleteVariable.cs" />
+    <Compile Include="Assets\Scripts\PhysicalButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

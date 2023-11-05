@@ -18,6 +18,11 @@ public class Components : Component, IComponent
     GameObject secondinsideCallCorrectObject;
     GameObject nextCallCorrectObject;
 
+    [SerializeField]
+    Material proccessRunning, proccessStopped;
+    [SerializeField]
+    MeshRenderer proccessIndicator;
+
     public bool DebugChange = false;
     public IEnumerator RunComponent()
     {
@@ -83,6 +88,8 @@ public class Components : Component, IComponent
         componentConnectors.ChangeComponents(componentType);
     }
 
+
+    //Working 
     public IEnumerator DebugComponent()
     {
         if (componentConnectors.VariableConnector.GetComponent<RopeSocket>().ropeObject == null)
@@ -100,7 +107,7 @@ public class Components : Component, IComponent
 
         Debug.Log(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString());
 
-        NextCall();
+        NextCall("Debug");
 
         yield break;
     }
@@ -122,9 +129,9 @@ public class Components : Component, IComponent
         }
 
         if (booleanCorrectObject.GetComponentInParent<IResultBoolean>().GetResult() == true)
-            StartCoroutine(insideCallCorrectObject.GetComponent<IComponent>().RunComponent());
+            StartCoroutine(insideCallCorrectObject.GetComponentInParent<IComponent>().RunComponent());
 
-        NextCall();
+        NextCall("If");
 
         yield break;
     }
@@ -137,11 +144,11 @@ public class Components : Component, IComponent
             yield break;
 
         if (componentConnectors.BoolConnector.GetComponentInParent<IResultBoolean>().GetResult() == true)
-            StartCoroutine(insideCallCorrectObject.GetComponent<IComponent>().RunComponent());
+            StartCoroutine(insideCallCorrectObject.GetComponentInParent<IComponent>().RunComponent());
         else
-            StartCoroutine(secondinsideCallCorrectObject.GetComponent<IComponent>().RunComponent());
+            StartCoroutine(secondinsideCallCorrectObject.GetComponentInParent<IComponent>().RunComponent());
 
-        NextCall();
+        NextCall("If Else");
 
         yield break;
     }
@@ -159,24 +166,25 @@ public class Components : Component, IComponent
             yield return null;
         }
 
-        if (variableCorrectObject.GetComponentInParent<IResult>().GetResult().GetType() != typeof(double))
+        if (Operator.GetObjectToConvert(variableCorrectObject) != typeof(double))
         {
             Debug.LogError("Loop: Wrong type!");
             yield return null;
         }
 
-        if ( (double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() < 0 )
+        if ( int.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()) < 0 )
         {
             Debug.LogError("Loop: Negative is not acceptable!");
             yield return null;
         }
 
+        proccessIndicator.material = proccessRunning;
         //float lastTime = 0f;
         int counter = 0;
-        while (counter != (int)variableCorrectObject.GetComponentInParent<IResult>().GetResult())
+        while (counter != int.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()))
         {
             counter++;
-            StartCoroutine(insideCallCorrectObject.GetComponent<IComponent>().RunComponent());
+            StartCoroutine(insideCallCorrectObject.GetComponentInParent<IComponent>().RunComponent());
             yield return new WaitForEndOfFrame();
             //Gyorsítás
             /*lastTime += Time.deltaTime;
@@ -186,7 +194,8 @@ public class Components : Component, IComponent
                 yield return new WaitForEndOfFrame();
             }*/
         }
-        NextCall();
+        proccessIndicator.material = proccessStopped;
+        NextCall("Loop");
 
         yield return null;
     }
@@ -199,9 +208,10 @@ public class Components : Component, IComponent
             yield return null;
 
         //float lastTime = 0f;
+        proccessIndicator.material = proccessRunning;
         while (booleanCorrectObject.GetComponentInParent<IResultBoolean>().GetResult() == false)
         {
-            StartCoroutine(insideCallCorrectObject.GetComponent<IComponent>().RunComponent());
+            StartCoroutine(insideCallCorrectObject.GetComponentInParent<IComponent>().RunComponent());
             yield return new WaitForEndOfFrame();
             //Gyorsítás
             /*lastTime += Time.deltaTime;
@@ -211,16 +221,23 @@ public class Components : Component, IComponent
                 yield return new WaitForEndOfFrame();
             }*/
         }
-        NextCall();
+        proccessIndicator.material = proccessStopped;
+        NextCall("LoopUntil");
 
         yield return null;
     }
 
-    public void NextCall()
+    public void NextCall(string previousCall)
     {
+        if(componentConnectors.NextCallConnector.GetComponent<RopeSocket>().ropeObject == null )
+        {
+            Debug.LogWarning(previousCall + ": No next call is connected");
+            return;
+        }
+
         nextCallCorrectObject = componentConnectors.NextCallConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
         if (nextCallCorrectObject != null)
-            StartCoroutine(nextCallCorrectObject.GetComponent<IComponent>().RunComponent());
+            StartCoroutine(nextCallCorrectObject.GetComponentInParent<IComponent>().RunComponent());
     }
 
     public IEnumerator WaitForSecondsComponent()
@@ -232,21 +249,21 @@ public class Components : Component, IComponent
             yield return null;
         }
 
-        if (variableCorrectObject.GetComponentInParent<IResult>().GetResult().GetType() != typeof(double))
+        if (Operator.GetObjectToConvert(variableCorrectObject) != typeof(double))
         {
             Debug.LogError("Wait For Seconds: Wrong variable type!");
             yield return null;
         }
 
-        if ((double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() < 0)
+        if (double.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()) < 0)
         {
             Debug.LogError("Wait For Seconds: Negative is not acceptable!");
             yield return null;
         }
 
-        yield return new WaitForSeconds((float)variableCorrectObject.GetComponentInParent<IResult>().GetResult());
+        yield return new WaitForSeconds(float.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()));
 
-        NextCall();
+        NextCall("WaitForSeconds");
 
         yield return null;
     }
@@ -287,8 +304,7 @@ public class Components : Component, IComponent
 
         variableCorrectObject.GetComponentInParent<VariableScript>().variableValue = secondvariableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString();
 
-        if (componentConnectors.NextCallConnector.GetComponent<RopeSocket>().ropeObject != null && componentConnectors.NextCallConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject) != null)
-            StartCoroutine(componentConnectors.NextCallConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject).GetComponent<IComponent>().RunComponent());
+        NextCall("Set Variable:");
 
         yield break;
     }

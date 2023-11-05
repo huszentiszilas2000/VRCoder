@@ -47,7 +47,7 @@ public class BooleanOperators : Operator, IResultBoolean
     {
         value1 = Operator.GetValueString(variableCorrectObject.gameObject);
         value2 = Operator.GetValueString(secondvariableCorrectObject.gameObject);
-        typeOf = Operator.GetObjectToConvert(variableCorrectObject.gameObject, secondvariableCorrectObject.gameObject);
+        typeOf = Operator.GetObjectsToConvert(variableCorrectObject.gameObject, secondvariableCorrectObject.gameObject);
     }
     public void SetBooleans()
     {

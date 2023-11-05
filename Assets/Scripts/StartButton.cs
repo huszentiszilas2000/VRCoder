@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -53,12 +49,12 @@ public class StartButton : Component
             return;
         }
 
-        if (socket.GetComponent<RopeSocket>().GetComponentCorrect(gameObject).transform.parent.GetComponent<IComponent>() == null)
+        if (socket.GetComponent<RopeSocket>().GetComponentCorrect(gameObject).GetComponentInParent<IComponent>() == null)
         {
             Debug.LogError("Start Button: Assert!");
             return;
         }
-        StartCoroutine(socket.GetComponent<RopeSocket>().GetComponentCorrect(gameObject).transform.parent.GetComponent<IComponent>().RunComponent());
+        StartCoroutine(socket.GetComponent<RopeSocket>().GetComponentCorrect(gameObject).GetComponentInParent<IComponent>().RunComponent());
         //StopCoroutine(nextCall.GetComponent<IComponent>().RunComponent());
     }
 

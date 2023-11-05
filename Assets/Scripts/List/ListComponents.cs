@@ -75,7 +75,7 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
 
         listCorrectObject.GetComponentInParent<ListScript>().variables.Add(variableCorrectObject.GetComponentInParent<IResult>().GetResult());
 
-        NextCall();
+        NextCall("Add To List");
 
         yield return null;
     }
@@ -122,7 +122,7 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
 
         listCorrectObject.GetComponentInParent<ListScript>().variables.RemoveAt((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult());
 
-        NextCall();
+        NextCall("Delete");
 
         yield return null;
     }
@@ -144,7 +144,7 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
 
         listCorrectObject.GetComponentInParent<ListScript>().variables.RemoveRange(0, listCorrectObject.GetComponentInParent<ListScript>().variables.Count);
 
-        NextCall();
+        NextCall("Delete All");
 
         yield return null;
     }
@@ -177,13 +177,13 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
             yield break;
         }
 
-        if (variableCorrectObject.GetComponentInParent<IResult>().GetResult().GetType() != typeof(double))
+        if (Operator.GetObjectToConvert(variableCorrectObject) != typeof(double))
         {
             Debug.LogError("List Component: Wrong type!");
             yield break;
         }
 
-        if ((double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() < 0 || (double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() == 0)
+        if (double.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()) < 0 || double.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()) == 0)
         {
             Debug.LogError("List Component: Negative or 0 is not acceptable!");
             yield break;
@@ -202,10 +202,10 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
             yield break;
         }
 
-        listCorrectObject.GetComponentInParent<ListScript>().variables.Insert((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult(), secondvariableCorrectObject.GetComponentInParent<IResult>().GetResult());
-        listCorrectObject.GetComponentInParent<ListScript>().variables.RemoveAt((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult() + 1);
+        listCorrectObject.GetComponentInParent<ListScript>().variables.Insert(int.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()), secondvariableCorrectObject.GetComponentInParent<IResult>().GetResult());
+        listCorrectObject.GetComponentInParent<ListScript>().variables.RemoveAt(int.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()) + 1);
 
-        NextCall();
+        NextCall("Replace In List");
 
         yield return null;
     }
@@ -238,13 +238,13 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
             yield break;
         }
 
-        if (variableCorrectObject.GetComponentInParent<IResult>().GetResult().GetType() != typeof(double))
+        if (Operator.GetObjectToConvert(variableCorrectObject) != typeof(double))
         {
             Debug.LogError("List Component: Wrong type!");
             yield break;
         }
 
-        if ((double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() < 0 || (double)variableCorrectObject.GetComponentInParent<IResult>().GetResult() == 0)
+        if (double.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()) < 0 || double.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()) == 0)
         {
             Debug.LogError("List Component: Negative or 0 is not acceptable!");
             yield break;
@@ -263,9 +263,9 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
             yield break;
         }
 
-        listCorrectObject.GetComponentInParent<ListScript>().variables.Insert((int)variableCorrectObject.GetComponentInParent<IResult>().GetResult(), secondvariableCorrectObject.GetComponentInParent<IResult>().GetResult());
+        listCorrectObject.GetComponentInParent<ListScript>().variables.Insert(int.Parse(variableCorrectObject.GetComponentInParent<IResult>().GetResult().ToString()), secondvariableCorrectObject.GetComponentInParent<IResult>().GetResult());
 
-        NextCall();
+        NextCall("Insert Into List:");
 
         yield return null;
     }
@@ -379,11 +379,17 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
         }
     }
 
-    public void NextCall()
+    public void NextCall(string previousCall)
     {
+        if (listComponentConnectors.NextComponentConnector.GetComponent<RopeSocket>().ropeObject == null)
+        {
+            Debug.LogWarning(previousCall + ": No next call is connected");
+            return;
+        }
+
         nextCallCorrectObject = listComponentConnectors.NextComponentConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
         if (nextCallCorrectObject != null)
-            StartCoroutine(nextCallCorrectObject.GetComponent<IComponent>().RunComponent());
+            StartCoroutine(nextCallCorrectObject.GetComponentInParent<IComponent>().RunComponent());
     }
 
     public void OnChangeListComponentPressed()

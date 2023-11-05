@@ -15,12 +15,16 @@ public class RopeSpawn : MonoBehaviour
     float partDistance = 0.1f;
 
     [SerializeField]
+    [Range(0, 5)]
+    int ropeSpawnCount = 1;
+
+    [SerializeField]
     bool spawn, firstPlug, lastPlug;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnRopes());
     }
 
     void Spawn()
@@ -61,6 +65,15 @@ public class RopeSpawn : MonoBehaviour
             {
                 tmp.GetComponent<CharacterJoint>().connectedBody = gm.transform.Find((gm.transform.childCount - 1).ToString()).GetComponent<Rigidbody>();
             }
+        }
+    }
+
+    IEnumerator SpawnRopes()
+    {
+        for(int i = 0; i < ropeSpawnCount; i++)
+        {
+            Spawn();
+            yield return new WaitForSeconds(1f);
         }
     }
 
