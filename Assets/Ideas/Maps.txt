@@ -1,0 +1,27 @@
+Menu: A pc where you can put casets and load scenes. Caset box with the levels.
+Tutorial Map0: Install the software -> Press the button. 
+Tutorial Map1: Set variable to 42 and pass it to the door
+Tutorial Map2: If használata. Input:  Egy szám ami páros-e (Nem látszik) Felhasználó feladata, hogy a változóból eldöntse, hogy páros-e a szám( 5x kell sikeres számot adni) Minden katra új szám generálódik a változóba
+Tutorial Map3: Ciklusok használata: Fel használó feladata, hogy a kockát átmozgassa 1 lépéssel 
+Tutorial Math Operators:
+Tutorial Boolean Operators:
+Tutorial Lists:
+Tutorial Components:
+Tutorial Map4: Lista használata: Adott listát visszamenőlegesen kell mozgatni.(1-1-1-1 az eltérések) zöld x: 1 piros x: 2  
+Tutorial Map5: Lista használata: Kulcsunk egy egyenletesen növekvő kockákból áll, feladat, hogy rendezzük növekvő sorrendbe a kockákat, hogy kinyíljon az ajtó 
+Tutorial Map6: Lista használata: Kulcs megkeresése: Van egy listánkba számok, feladatunk, hogy egy inputra megadott számnak az összegét megkell keresnünk a listába és annak a 2nek az elemét kiadni
+
+Map1: Sequence detections: Players job to find a sequence and write an algorithm that finishes the sequence. Till x number <- Goood. Fibonacci, alternating sequence, 2 rules together.
+Map2: List game: Reverse the list the fastest.
+Map3: Repair the code, guessing numbers. 
+Map4: Create a stair that i can walk up in vr. array height
+Map5: Get a distance where the player has to calculate the angle where to shot the target. (No drop off, resistance)
+Map6: Write an algorithm where Priority, distance and capacity plays the rule. the closer and higher priority is the most important and after the capacity. everythign from 1 - 100 
+map7: Anagram check
+map8: FizzBuzz game.
+map9: Tower of Hanoi
+Map10: Present fractorial numbers on 5 
+Map11: Determine the prime numbers. 
+Map12: Largest element, lowest element in array. 
+Map13: Jump game
+
