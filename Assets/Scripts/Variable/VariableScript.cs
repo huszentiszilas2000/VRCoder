@@ -7,8 +7,8 @@ using System;
 
 public class VariableScript : MonoBehaviour, IResult
 {
-    public string variableName;
-    public string variableValue;
+    public string variableName = "";
+    public string variableValue = "";
 
     public System.Object GetResult()
     {

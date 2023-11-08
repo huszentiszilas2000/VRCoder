@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 774456075}
   - component: {fileID: 774456074}
   - component: {fileID: 774456073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Press
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1280900017}
   - component: {fileID: 1280900016}
   - component: {fileID: 1280900015}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,6 +182,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1837788378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837788379}
+  m_Layer: 8
+  m_Name: HandleAttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1837788379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837788378}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.5}
+  m_LocalPosition: {x: -0.0096, y: 0.2156, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6533499734974016019}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 270}
 --- !u!1 &501830793671340092
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +226,7 @@ GameObject:
   - component: {fileID: 7951201635878672124}
   - component: {fileID: 3761267142346547401}
   - component: {fileID: 7030675633307171676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressColider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +418,7 @@ GameObject:
   - component: {fileID: 5923407682523255552}
   - component: {fileID: 1887647674474409718}
   - component: {fileID: 8230535149872094164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SidePlugVariableSecond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +510,9 @@ MonoBehaviour:
     m_Bits: 16
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -516,6 +549,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -534,6 +569,11 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!64 &1887647674474409718
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -575,7 +615,7 @@ GameObject:
   - component: {fileID: 6036750127500317587}
   - component: {fileID: 428811828469039068}
   - component: {fileID: 7745915879849900310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PreviousComponentPlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,7 +707,9 @@ MonoBehaviour:
     m_Bits: 4294967234
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -704,6 +746,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -722,6 +766,11 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!64 &428811828469039068
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -765,7 +814,9 @@ GameObject:
   - component: {fileID: 6533499734974016030}
   - component: {fileID: 1981060721}
   - component: {fileID: 1981060728}
-  m_Layer: 0
+  - component: {fileID: 1661160456}
+  - component: {fileID: 1661160457}
+  m_Layer: 8
   m_Name: ComponentBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,6 +846,7 @@ Transform:
   - {fileID: 6621845351129433647}
   - {fileID: 8498947038687183254}
   - {fileID: 1280900018}
+  - {fileID: 1837788379}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1490,7 +1542,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3298
+  m_VersionIndex: 3313
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1522,6 +1574,7 @@ MonoBehaviour:
     RefIds:
     - rid: 2667116587542642689
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!23 &6533499734974016016
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1584,7 +1637,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &1981060721
@@ -1633,6 +1686,163 @@ MonoBehaviour:
   SecondInsideConnected: 0
   NextConnected: 0
   ComponentName: {fileID: 6533499735278107883}
+--- !u!54 &1661160456
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533499734974016029}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1661160457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533499734974016029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6845be860dfdf2f46b6125397b6a63ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders:
+  - {fileID: 6533499736492768950}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AttachTransform: {fileID: 1837788379}
+  m_ChangeTransformParent: 1
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 1
+  m_VelocityDamping: 1
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 1
+  m_AngularVelocityScale: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_ForceGravityOnDetach: 0
+  m_RetainTransformParent: 1
+  m_AttachPointCompatibilityMode: 0
 --- !u!1 &6533499735278107882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,7 +1854,7 @@ GameObject:
   - component: {fileID: 6533499735278107885}
   - component: {fileID: 6533499735278107884}
   - component: {fileID: 6533499735278107883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +2024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6533499735695492239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Alarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,7 +2062,7 @@ GameObject:
   - component: {fileID: 6533499735777543473}
   - component: {fileID: 6533499735777543472}
   - component: {fileID: 6533499735777543487}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopAlarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4766,7 +4976,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 9908
+  m_VersionIndex: 9923
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4880,7 +5090,7 @@ GameObject:
   - component: {fileID: 6533499735890316042}
   - component: {fileID: 6533499735890316041}
   - component: {fileID: 6533499735890316040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomAlarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6594,7 +6804,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6321
+  m_VersionIndex: 6336
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6708,7 +6918,7 @@ GameObject:
   - component: {fileID: 459832295638604481}
   - component: {fileID: 8903620544425948546}
   - component: {fileID: 1089912890143695802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SidePlugBoolean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6800,7 +7010,9 @@ MonoBehaviour:
     m_Bits: 8
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -6837,6 +7049,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -6855,6 +7069,11 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!64 &8903620544425948546
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6896,7 +7115,7 @@ GameObject:
   - component: {fileID: 6533499736492768968}
   - component: {fileID: 6533499736492768951}
   - component: {fileID: 6533499736492768950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7730,7 +7949,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6844
+  m_VersionIndex: 6859
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7762,6 +7981,7 @@ MonoBehaviour:
     RefIds:
     - rid: 2667116587542642706
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!23 &6533499736492768968
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7823,7 +8043,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &6621845351129433644
@@ -7840,7 +8060,7 @@ GameObject:
   - component: {fileID: 5312594968465496603}
   - component: {fileID: 4278999920577714286}
   - component: {fileID: 5030243037289682563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InsideComponentPlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7932,7 +8152,9 @@ MonoBehaviour:
     m_Bits: 4294967234
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -7969,6 +8191,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -7987,6 +8211,11 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!64 &4278999920577714286
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8028,7 +8257,7 @@ GameObject:
   - component: {fileID: 8146527703268124243}
   - component: {fileID: 8811861267261143734}
   - component: {fileID: 778542601234217576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NextComponentPlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8120,7 +8349,9 @@ MonoBehaviour:
     m_Bits: 4294967234
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8157,6 +8388,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8175,6 +8408,11 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!64 &8811861267261143734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8213,7 +8451,7 @@ GameObject:
   - component: {fileID: 3688445193109714824}
   - component: {fileID: 6718740536277718326}
   - component: {fileID: 6219504263403143705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8388,7 +8626,7 @@ GameObject:
   - component: {fileID: 7470898901227363746}
   - component: {fileID: 1818601197040188348}
   - component: {fileID: 8868492462717576579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SecondInsideComponentPlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8480,7 +8718,9 @@ MonoBehaviour:
     m_Bits: 4294967234
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8517,6 +8757,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8535,6 +8777,11 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!64 &1818601197040188348
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8576,7 +8823,7 @@ GameObject:
   - component: {fileID: 6172342166926850245}
   - component: {fileID: 6680455538209349521}
   - component: {fileID: 4185912466599462742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SidePlugVariable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8667,8 +8914,10 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 4294967248
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
+  m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8705,6 +8954,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8723,6 +8974,11 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!64 &6680455538209349521
 MeshCollider:
   m_ObjectHideFlags: 0

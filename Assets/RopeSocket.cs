@@ -9,6 +9,7 @@ public class RopeSocket : MonoBehaviour
     public GameObject ropeObject;
     private void Start()
     {
+        ropeObject = null;
         xRSocket = GetComponent<XRSocketInteractor>();
     }
 

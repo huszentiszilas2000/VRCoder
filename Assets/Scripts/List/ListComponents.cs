@@ -274,9 +274,9 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
     {
         switch (listComponentType)
         {
-            case ListComponentType.Item:
+            case ListComponentType.GetItem:
                 return GetItem();
-            case ListComponentType.ItemPlace:
+            case ListComponentType.GetItemPlace:
                 return GetItemPlace();
             case ListComponentType.Length:
                 return GetLength();
@@ -418,7 +418,7 @@ public enum ListComponentType
     DeleteAll,
     Insert,
     Replace,
-    Item,
-    ItemPlace,
+    GetItem,
+    GetItemPlace,
     Length
 }

@@ -85,9 +85,9 @@ public class ListComponentConnectors : MonoBehaviour
                     NextComponentConnector.SetActive(true);
                     break;
                 }
-            case ListComponentType.Item:
+            case ListComponentType.GetItem:
                 {
-                    ComponentName.text = "Item,";
+                    ComponentName.text = "GetItem";
                     VariableConnector.SetActive(true);
                     SecondVariableConnector.SetActive(false);
                     ListConnector.SetActive(true);
@@ -96,9 +96,9 @@ public class ListComponentConnectors : MonoBehaviour
                     NextComponentConnector.SetActive(false);
                     break;
                 }
-            case ListComponentType.ItemPlace:
+            case ListComponentType.GetItemPlace:
                 {
-                    ComponentName.text = "ItemPlace~";
+                    ComponentName.text = "GetItemPlace";
                     VariableConnector.SetActive(true);
                     SecondVariableConnector.SetActive(false);
                     ListConnector.SetActive(true);

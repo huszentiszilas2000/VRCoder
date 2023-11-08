@@ -22,6 +22,7 @@ public class RopeMeshRenderer : MonoBehaviour
 
     void Update()
     {
+        transform.position = new Vector3(0, 0, 0);
         GameObject[] renderPoints = GameObject.FindGameObjectsWithTag("RenderPoint");
         foreach (GameObject renderPoint in renderPoints)
             Destroy(renderPoint);
