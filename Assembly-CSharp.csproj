@@ -94,6 +94,11 @@
     <Compile Include="Assets\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Variable\GetVariableGameObject.cs" />
     <Compile Include="Assets\Scripts\Variable\DeleteVariable.cs" />
+    <Compile Include="Assets\CopyScript.cs" />
+    <Compile Include="Assets\Scripts\GameObjectControlling\GameObjectControllerConnectors.cs" />
+    <Compile Include="Assets\Scripts\GameObjectControlling\GameObjectControlling.cs" />
+    <Compile Include="Assets\Scripts\GameObjectControlling\SpawnGameObject.cs" />
+    <Compile Include="Assets\Scripts\PhysicalSwitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

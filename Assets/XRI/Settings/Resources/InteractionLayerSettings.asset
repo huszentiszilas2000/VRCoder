@@ -19,7 +19,7 @@ MonoBehaviour:
   - BooleanPlug
   - VariablePlug
   - ListVariablePlug
-  - 
+  - GameObjectPlug
   - 
   - 
   - 

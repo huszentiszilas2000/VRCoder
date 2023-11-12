@@ -532,7 +532,19 @@ MonoBehaviour:
   press: {fileID: 546923220673668208}
   Pressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9072651508171519172}
+        m_TargetAssemblyTypeName: CopyScript, Assembly-CSharp
+        m_MethodName: Copy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4828318135588785633
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +851,7 @@ GameObject:
   - component: {fileID: 9148696114914379763}
   - component: {fileID: 3581601596775636322}
   - component: {fileID: 9055027816678773157}
+  - component: {fileID: 9072651508171519172}
   m_Layer: 0
   m_Name: ListVariableBox
   m_TagString: Untagged
@@ -1558,7 +1571,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3388
+  m_VersionIndex: 3391
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1812,6 +1825,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &9072651508171519172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9148696114914379760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9551e7c24c22d148bbc479927558e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  copyObject: {fileID: 9148696114914379760}
 --- !u!1 &9148696115612733703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,7 +2858,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6757
+  m_VersionIndex: 6760
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
