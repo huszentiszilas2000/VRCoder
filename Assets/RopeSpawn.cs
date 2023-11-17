@@ -9,7 +9,7 @@ public class RopeSpawn : MonoBehaviour
 
     [SerializeField]
     [Range(0, 20)]
-    float length = 0;
+    public float length = 0;
 
     [SerializeField]
     float partDistance = 0.1f;
@@ -27,7 +27,7 @@ public class RopeSpawn : MonoBehaviour
         StartCoroutine(SpawnRopes());
     }
 
-    void Spawn()
+    public void Spawn()
     {
         int count = (int)(length / partDistance);
         GameObject gm;

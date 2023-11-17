@@ -18,6 +18,7 @@ public class CopyScript : MonoBehaviour
         {
             Debug.LogError("Assert: Copy script is missing object");
         }
-        Instantiate(copyObject, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity, transform.parent);
+        GameObject spawned = Instantiate(copyObject, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity, transform.parent);
+        spawned.transform.rotation = transform.rotation;
     }
 }

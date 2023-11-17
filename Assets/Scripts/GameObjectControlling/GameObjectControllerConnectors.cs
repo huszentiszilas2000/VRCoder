@@ -89,6 +89,16 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     NextComponentConnector.SetActive(true);
                     break;
                 }
+            case GameObjectControllingType.SetName:
+                {
+                    ComponentName.text = "SetName";
+                    VariableConnector.SetActive(true);
+                    GameObjectConnector.SetActive(true);
+                    VariableOutConnector.SetActive(false);
+                    PreviousComponentConnector.SetActive(true);
+                    NextComponentConnector.SetActive(true);
+                    break;
+                }
             default:
                 {
                     ComponentName.text = "Assert Gameobject controlling!!";

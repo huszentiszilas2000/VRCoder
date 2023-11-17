@@ -27,6 +27,8 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
                 break;
             case GameObjectControllingType.SetScale:
                 break;
+            case GameObjectControllingType.SetName:
+                break;
             default:
                 break;
         }
@@ -80,7 +82,7 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
             return;
         }
 
-        if (gameObjectControllingType == GameObjectControllingType.GetScale)
+        if (gameObjectControllingType == GameObjectControllingType.SetName)
         {
             gameObjectControllingType = 0;
             gameObjectControllerConnectors.ChangeGameObjectController(gameObjectControllingType);
@@ -99,7 +101,8 @@ public enum GameObjectControllingType
    SetRotation,
    GetRotation,
    SetScale,
-   GetScale
+   GetScale,
+   SetName
 }
 
 public enum XYZChoice
