@@ -8017,6 +8017,10 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Object Control
       m_Image: {fileID: 0}
+    - m_Text: Start Button
+      m_Image: {fileID: 0}
+    - m_Text: Stop Button
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10682,6 +10686,10 @@ MonoBehaviour:
   panelGameObjects: {fileID: 5362710300122223317}
   panelVariable: {fileID: 878782200}
   panelListVariable: {fileID: 984009263}
+  menu: {fileID: 2140746904}
+  rayControllerLeft: {fileID: 606792928160840938}
+  rayControllerRight: {fileID: 4364878259556271970}
+  inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &2103922862
 GameObject:
   m_ObjectHideFlags: 0
@@ -10866,7 +10874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2140746905
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10968,15 +10976,17 @@ MonoBehaviour:
   component: {fileID: 6533499734974016029, guid: 6468efb42b0c38442bc3053af5d0b4f3, type: 3}
   listcomponent: {fileID: 3660733109849133145, guid: 8bb7ea164e6c2cf4bbd17466ea1a3fc3, type: 3}
   gamecontrollcomponent: {fileID: 123063676747240256, guid: f2dca4d9aa59d264c9d3b897b4f5a329, type: 3}
+  startbuttoncomponent: {fileID: 5484462318108240271, guid: 1b00bb2f436972148be1da4e4b8af889, type: 3}
+  stopbuttoncomponent: {fileID: 9067388223094652134, guid: 089e4a0273c9e5e468232dcf222251a9, type: 3}
   ropeComponentSpawner: {fileID: 909338210}
   variableRopeComponentSpawner: {fileID: 792065758}
   listRopeComponentSpawner: {fileID: 673717892}
   gameobjectRopeComponentSpawner: {fileID: 2108684809}
   booleanRopeComponentSpawner: {fileID: 617872228}
-  cubeObject: {fileID: 0}
-  sphereObject: {fileID: 0}
-  capsuleObject: {fileID: 0}
-  cylinderObject: {fileID: 0}
+  cubeObject: {fileID: 5514077240109240538, guid: 900d232582f8b76469687ed60362ea2a, type: 3}
+  sphereObject: {fileID: 6570722452741100245, guid: 657964bbd7beaa249834a1f3d5f6083e, type: 3}
+  capsuleObject: {fileID: 7010590632053490760, guid: 1cd361432e66cf94daa07a7f77246493, type: 3}
+  cylinderObject: {fileID: 3826245137237501602, guid: 8e3b63ebb2f70b04f93833edf1552e20, type: 3}
   mathOperatorObject: {fileID: 692557602166446282, guid: edc60c78db55ceb419bf0f2b037171d1, type: 3}
   booleanOperatorObject: {fileID: 7877017375297228372, guid: 5fc36bf1e09b74e48bb94596b3ee0214, type: 3}
   variableObject: {fileID: 4011042624736411374, guid: 14bd2eddea2d72a459a7c7a847d22394, type: 3}
@@ -11053,7 +11063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3511376863657555404
 Transform:
   m_ObjectHideFlags: 0
@@ -11828,7 +11838,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316837159181123188}
-  - component: {fileID: 215899762254998595}
   m_Layer: 12
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -11852,49 +11861,6 @@ Transform:
   m_Father: {fileID: 8833315156264033007}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &215899762254998595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2222362731734261673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ecf8d5d152e6042a9869fdf97d4057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categoryName: {fileID: 0}
-  categoryChildComponentName: {fileID: 0}
-  categoryChildVariableName: {fileID: 0}
-  categoryChildGameObjectName: {fileID: 0}
-  categoryChildCableName: {fileID: 0}
-  categoryChildOperatorName: {fileID: 0}
-  listName: {fileID: 0}
-  variableName: {fileID: 0}
-  variableValue: {fileID: 0}
-  sliderLength: {fileID: 0}
-  objectName: {fileID: 0}
-  togglePhysics: {fileID: 0}
-  toggleInteractable: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  component: {fileID: 0}
-  listcomponent: {fileID: 0}
-  gamecontrollcomponent: {fileID: 0}
-  ropeComponentSpawner: {fileID: 0}
-  variableRopeComponentSpawner: {fileID: 0}
-  listRopeComponentSpawner: {fileID: 0}
-  gameobjectRopeComponentSpawner: {fileID: 0}
-  booleanRopeComponentSpawner: {fileID: 0}
-  cubeObject: {fileID: 0}
-  sphereObject: {fileID: 0}
-  capsuleObject: {fileID: 0}
-  cylinderObject: {fileID: 0}
-  mathOperatorObject: {fileID: 0}
-  booleanOperatorObject: {fileID: 0}
-  variableObject: {fileID: 0}
-  listvariableObject: {fileID: 0}
-  gameObjectvariableObject: {fileID: 0}
 --- !u!1 &2657123377852034216
 GameObject:
   m_ObjectHideFlags: 0
@@ -12290,7 +12256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7359455663158690124
 Transform:
   m_ObjectHideFlags: 0
@@ -12492,8 +12458,17 @@ LineRenderer:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -46577,7 +46552,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 257
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -46662,7 +46637,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.05
-  m_Center: {x: 0.02, y: -0.03, z: -0.04}
+  m_Center: {x: -0.02, y: -0.03, z: -0.04}
 --- !u!114 &860959408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46957,7 +46932,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 122
+    m_Bits: 378
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1

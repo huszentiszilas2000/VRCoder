@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4155833855023679881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7869838572301614945}
+  m_Layer: 8
+  m_Name: AttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7869838572301614945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155833855023679881}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9067388223094652154}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &7334539958741414141
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +43,7 @@ GameObject:
   - component: {fileID: 5721420763867360669}
   - component: {fileID: 2571851534481598375}
   - component: {fileID: 5510765894316816531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +193,7 @@ MonoBehaviour:
   Pressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5510765894316816531}
         m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
         m_MethodName: StopAllCoroutines
         m_Mode: 1
@@ -174,6 +205,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  xOg: 0
+  yOg: -0.2
+  zOg: 0
+  xNew: 0
+  yNew: -0.313
+  zNew: 0
 --- !u!1 &9067388222106573225
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +225,7 @@ GameObject:
   - component: {fileID: 9067388222106573229}
   - component: {fileID: 9067388222106573228}
   - component: {fileID: 9067388222106573227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Press
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,14 +239,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9067388222106573225}
-  m_LocalRotation: {x: 1.110223e-17, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.313, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6816383852230745166}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &9067388222106573231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,7 +1939,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1823
+  m_VersionIndex: 1835
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2016,7 +2053,7 @@ GameObject:
   - component: {fileID: 9067388223094652135}
   - component: {fileID: 4184014949739747121}
   - component: {fileID: 9127472335094733482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2031,11 +2068,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9067388223094652134}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 2, y: 1, z: 3.189}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.188, y: 0.188, z: 0.188}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6816383852230745166}
+  - {fileID: 7869838572301614945}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -9354,7 +9392,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 32
+  m_VersionIndex: 44
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9485,7 +9523,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 7869838572301614945}
   m_ChangeTransformParent: 1
   m_AttachEaseInTime: 0.15
   m_MovementType: 1

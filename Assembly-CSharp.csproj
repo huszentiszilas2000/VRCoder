@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\GameObjectControlling\GameObjectControlling.cs" />
     <Compile Include="Assets\FPS.cs" />
     <Compile Include="Assets\Scripts\PhysicalButton.cs" />
+    <Compile Include="Assets\SpawnerUI.cs" />
     <Compile Include="Assets\Scripts\Variable\VariableScript.cs" />
     <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\AxisSlider.cs" />
     <Compile Include="Assets\Scripts\Operators\BooleanOperatorConnectors.cs" />
@@ -110,7 +111,7 @@
     <Compile Include="Assets\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Variable\GetVariableGameObject.cs" />
     <Compile Include="Assets\Scripts\Variable\DeleteVariable.cs" />
-    <Compile Include="Assets\SpawnerUI.cs" />
+    <Compile Include="Assets\GameObjectNameWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

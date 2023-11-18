@@ -10,6 +10,13 @@ public class PhysicalButton : MonoBehaviour
     public bool isPressed = false;
     public GameObject press;
     public UnityEvent Pressed;
+    public float xOg;
+    public float yOg;
+    public float zOg;
+    public float xNew;
+    public float yNew;
+    public float zNew;
+
 
     private void Start()
     {
@@ -21,7 +28,7 @@ public class PhysicalButton : MonoBehaviour
     {
         if (isPressed == false && other.gameObject.name == "RightHand")
         {
-            press.transform.localPosition = new Vector3(0, 0, 0);
+            press.transform.localPosition = new Vector3(xOg, yOg, zOg);
             audioSource.Play();
             isPressed = true;
         }
@@ -31,7 +38,7 @@ public class PhysicalButton : MonoBehaviour
     {
         if (other.gameObject.name == "RightHand")
         {
-            press.transform.localPosition = new Vector3(0, 0, 1.15f);
+            press.transform.localPosition = new Vector3(xNew, yNew, zNew);
             Pressed.Invoke();
             isPressed = false;
         }

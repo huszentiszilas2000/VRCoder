@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 746759032308244522}
   - component: {fileID: 746759032308244565}
   - component: {fileID: 746759032308244564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6766
+  m_VersionIndex: 6772
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 4069805409993699315}
   - component: {fileID: 4638915937710691232}
   - component: {fileID: 4868932057137655640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VariableBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3400
+  m_VersionIndex: 3406
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 746759033776661007}
   - component: {fileID: 746759033776661006}
   - component: {fileID: 746759033776661001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2147,7 +2147,7 @@ GameObject:
   - component: {fileID: 4546729286232265081}
   - component: {fileID: 5058647403718000327}
   - component: {fileID: 6210539048573714334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressColider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2213,6 +2213,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  xOg: 0
+  yOg: 0
+  zOg: 0
+  xNew: 0
+  yNew: 0
+  zNew: 1.15
 --- !u!82 &5058647403718000327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2340,7 +2346,7 @@ GameObject:
   - component: {fileID: 2109228592}
   - component: {fileID: 6731673821426045403}
   - component: {fileID: 1045751243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OutVariablePlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2548,7 +2554,7 @@ GameObject:
   - component: {fileID: 327365807428213566}
   - component: {fileID: 2018568690821694957}
   - component: {fileID: 6321757894075945837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2719,7 +2725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4311510084213011812}
   - component: {fileID: 1481024315617561828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VariableBoxReal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2754,8 +2760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1104e35d8af121c4dab7d8194b8063d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  variableName: da
-  variableValue: 1000000
+  variableName: 
+  variableValue: 
 --- !u!1 &6766030740340609219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,7 +2773,7 @@ GameObject:
   - component: {fileID: 6984819468183285455}
   - component: {fileID: 7382196244368930394}
   - component: {fileID: 4584716771137570033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2851,7 +2857,7 @@ GameObject:
   - component: {fileID: 5652281852068070962}
   - component: {fileID: 7451367776217298434}
   - component: {fileID: 4108219335893550268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Press
   m_TagString: Untagged
   m_Icon: {fileID: 0}

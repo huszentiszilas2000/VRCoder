@@ -388,6 +388,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  xOg: 0
+  yOg: 0
+  zOg: 0
+  xNew: 0
+  yNew: 0
+  zNew: 1.15
 --- !u!1 &4033939890411317070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,7 +2111,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3355
+  m_VersionIndex: 3358
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3617,7 +3623,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6760
+  m_VersionIndex: 6763
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

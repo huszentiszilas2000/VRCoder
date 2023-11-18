@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class MenuCategoryHandler : MonoBehaviour
 {
@@ -16,6 +17,31 @@ public class MenuCategoryHandler : MonoBehaviour
     public GameObject panelGameObjects;
     public GameObject panelVariable;
     public GameObject panelListVariable;
+
+    public GameObject menu;
+    public GameObject rayControllerLeft;
+    public GameObject rayControllerRight;
+    public InputActionAsset inputActions;
+    private InputAction menuInput;
+
+    private void Start()
+    {
+        menuInput = inputActions.FindActionMap("XRI LeftHand").FindAction("Menu");
+        menuInput.Enable();
+        menuInput.performed += ToggleMenu;
+    }
+
+    private void OnDestroy()
+    {
+        menuInput.performed -= ToggleMenu;
+    }
+
+    public void ToggleMenu(InputAction.CallbackContext context)
+    {
+        rayControllerLeft.SetActive(!menu.activeSelf);
+        rayControllerRight.SetActive(!menu.activeSelf);
+        menu.SetActive(!menu.activeSelf);
+    }
 
     public void OnValueChange()
     {

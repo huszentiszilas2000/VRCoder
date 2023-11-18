@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2053946390922249094}
   - component: {fileID: 290897430967541077}
   - component: {fileID: 5742504470775385045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1732227981452746376}
   - component: {fileID: 4999463459317254499}
   - component: {fileID: 1732227980431146355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OutVariablePlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 1321552820072085650}
   - component: {fileID: 1321552820072085741}
   - component: {fileID: 1321552820072085740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6775
+  m_VersionIndex: 6781
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1346,7 +1346,8 @@ GameObject:
   - component: {fileID: 2337586316761429835}
   - component: {fileID: 6371082040450157336}
   - component: {fileID: 6601142097224431584}
-  m_Layer: 0
+  - component: {fileID: 8254897402589722787}
+  m_Layer: 8
   m_Name: GameObjectBoxInner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1361,7 +1362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321552820581805127}
   m_LocalRotation: {x: 1.110223e-17, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.12}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.319149, y: 5.319149, z: 5.319149}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2065,7 +2066,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3409
+  m_VersionIndex: 3415
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2332,6 +2333,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   copyObject: {fileID: 1321552820581805127}
+--- !u!114 &8254897402589722787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321552820581805127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177437e7638a9034bbe761eda2aa1ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameObject: {fileID: 1321552820751678129}
 --- !u!1 &1321552820751678128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2357,7 @@ GameObject:
   - component: {fileID: 1321552820751678135}
   - component: {fileID: 1321552820751678134}
   - component: {fileID: 1321552820751678129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2517,7 +2531,7 @@ GameObject:
   - component: {fileID: 2815636083646040513}
   - component: {fileID: 6789723069944686207}
   - component: {fileID: 5636915153882474278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressColider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2583,6 +2597,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  xOg: 0
+  yOg: 0
+  zOg: 0
+  xNew: 0
+  yNew: 0
+  zNew: 1.15
 --- !u!82 &6789723069944686207
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2705,7 +2725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2584947162278538716}
   - component: {fileID: 988514012017113030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObjectBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2752,7 +2772,7 @@ GameObject:
   - component: {fileID: 8711382690882909815}
   - component: {fileID: 9113254249648025314}
   - component: {fileID: 2858153776046251081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2836,7 +2856,7 @@ GameObject:
   - component: {fileID: 6231552854828801674}
   - component: {fileID: 9179056946244398778}
   - component: {fileID: 2380521373548174340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Press
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 112729846}
   - component: {fileID: 112729845}
   - component: {fileID: 112729844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ZTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 988152850}
   - component: {fileID: 988152852}
   - component: {fileID: 988152851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 1029465267}
   - component: {fileID: 1029465269}
   - component: {fileID: 1029465268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 1682019811}
   - component: {fileID: 1682019810}
   - component: {fileID: 1682019809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: YTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 1869787877}
   - component: {fileID: 1869787879}
   - component: {fileID: 1869787878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 2087698997}
   - component: {fileID: 2087698996}
   - component: {fileID: 2087698995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 7339521304987640043}
   - component: {fileID: 2564106458524513807}
   - component: {fileID: 5861407578154955654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObjectControllingBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3388
+  m_VersionIndex: 3394
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 123063677114238384}
   - component: {fileID: 123063677114238385}
   - component: {fileID: 123063677114238390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'List
+  m_text: 'GameObject
 
 '
   m_isRightToLeft: 0
@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 123063678600447893}
   - component: {fileID: 123063678600447978}
   - component: {fileID: 123063678600447979}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2866,7 +2866,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6781
+  m_VersionIndex: 6787
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2977,7 +2977,7 @@ GameObject:
   - component: {fileID: 7315547816819561506}
   - component: {fileID: 8408723287065831217}
   - component: {fileID: 8998844378221415468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: YBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3227,7 +3227,7 @@ GameObject:
   - component: {fileID: 637341700201294542}
   - component: {fileID: 1665590015303842965}
   - component: {fileID: 854299799611592367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OutVariablePlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3424,7 +3424,7 @@ GameObject:
   - component: {fileID: 5977118488629586826}
   - component: {fileID: 6973014589459826286}
   - component: {fileID: 3312827204852692850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SidePlugGameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3621,7 +3621,7 @@ GameObject:
   - component: {fileID: 3747333710301165700}
   - component: {fileID: 7566167491147443863}
   - component: {fileID: 3145816589016187093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NextComponentPlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3818,7 +3818,7 @@ GameObject:
   - component: {fileID: 3112052001970776950}
   - component: {fileID: 2029080209998947556}
   - component: {fileID: 1678416268768390260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4065,7 +4065,7 @@ GameObject:
   - component: {fileID: 7507905181635628757}
   - component: {fileID: 442285476039109739}
   - component: {fileID: 958858300669426500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4235,7 +4235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8199302273504808823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XYZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4274,7 +4274,7 @@ GameObject:
   - component: {fileID: 1291793764520940846}
   - component: {fileID: 4821544887618376260}
   - component: {fileID: 8763576058984993549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ZBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4524,7 +4524,7 @@ GameObject:
   - component: {fileID: 8039977567983079895}
   - component: {fileID: 6534941361730571057}
   - component: {fileID: 7870798552511649973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PreviousComponentPlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4718,7 +4718,7 @@ GameObject:
   - component: {fileID: 6565846555466709590}
   - component: {fileID: 6565846555466709591}
   - component: {fileID: 6565846555466709588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Press
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4803,7 +4803,7 @@ GameObject:
   - component: {fileID: 6565846556034007788}
   - component: {fileID: 6565846556034007789}
   - component: {fileID: 6565846556034007794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4902,7 +4902,7 @@ GameObject:
   - component: {fileID: 2213871186024277563}
   - component: {fileID: 381266561031373056}
   - component: {fileID: 8730714904469841771}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressColider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5080,6 +5080,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  xOg: 0
+  yOg: 0
+  zOg: 0
+  xNew: 0
+  yNew: 0
+  zNew: 1.15
 --- !u!1 &8686923035797600206
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,7 +5131,7 @@ GameObject:
   - component: {fileID: 5348373605914989983}
   - component: {fileID: 4059667896069807288}
   - component: {fileID: 884816314258401068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SidePlugVariable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
