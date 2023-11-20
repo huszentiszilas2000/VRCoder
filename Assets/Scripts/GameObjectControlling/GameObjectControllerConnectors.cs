@@ -14,6 +14,8 @@ public class GameObjectControllerConnectors : MonoBehaviour
     public GameObject PreviousComponentConnector;
     public GameObject NextComponentConnector;
 
+    public GameObject XYZComponent;
+
     public bool VariableConnected, GameObjectConnected, VariableOutConnected, PreviousComponentConnected, NextComponentConnected;
 
     public TMP_Text ComponentName;
@@ -37,6 +39,7 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     VariableOutConnector.SetActive(true);
                     PreviousComponentConnector.SetActive(false);
                     NextComponentConnector.SetActive(false);
+                    XYZComponent.SetActive(true);
                     break;
                 }
             case GameObjectControllingType.GetRotation:
@@ -47,6 +50,7 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     VariableOutConnector.SetActive(true);
                     PreviousComponentConnector.SetActive(false);
                     NextComponentConnector.SetActive(false);
+                    XYZComponent.SetActive(true);
                     break;
                 }
             case GameObjectControllingType.GetScale:
@@ -56,7 +60,8 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     GameObjectConnector.SetActive(true);
                     VariableOutConnector.SetActive(true);
                     PreviousComponentConnector.SetActive(false);
-                    NextComponentConnector.SetActive(false);
+                    NextComponentConnector.SetActive(false); 
+                    XYZComponent.SetActive(true);
                     break;
                 }
             case GameObjectControllingType.SetPosition:
@@ -67,16 +72,29 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     VariableOutConnector.SetActive(false);
                     PreviousComponentConnector.SetActive(true);
                     NextComponentConnector.SetActive(true);
+                    XYZComponent.SetActive(true);
                     break;
                 }
-            case GameObjectControllingType.SetRotation:
+            case GameObjectControllingType.Rotate:
                 {
-                    ComponentName.text = "SetRotation";
+                    ComponentName.text = "Rotate";
                     VariableConnector.SetActive(true);
                     GameObjectConnector.SetActive(true);
                     VariableOutConnector.SetActive(false);
                     PreviousComponentConnector.SetActive(true);
                     NextComponentConnector.SetActive(true);
+                    XYZComponent.SetActive(true);
+                    break;
+                }
+            case GameObjectControllingType.RotateTowards:
+                {
+                    ComponentName.text = "RotateTo";
+                    VariableConnector.SetActive(true);
+                    GameObjectConnector.SetActive(true);
+                    VariableOutConnector.SetActive(false);
+                    PreviousComponentConnector.SetActive(true);
+                    NextComponentConnector.SetActive(true);
+                    XYZComponent.SetActive(true);
                     break;
                 }
             case GameObjectControllingType.SetScale:
@@ -87,6 +105,7 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     VariableOutConnector.SetActive(false);
                     PreviousComponentConnector.SetActive(true);
                     NextComponentConnector.SetActive(true);
+                    XYZComponent.SetActive(true);
                     break;
                 }
             case GameObjectControllingType.SetName:
@@ -97,6 +116,7 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     VariableOutConnector.SetActive(false);
                     PreviousComponentConnector.SetActive(true);
                     NextComponentConnector.SetActive(true);
+                    XYZComponent.SetActive(false);
                     break;
                 }
             default:
@@ -107,6 +127,7 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     VariableOutConnector.SetActive(false);
                     PreviousComponentConnector.SetActive(false);
                     NextComponentConnector.SetActive(false);
+                    XYZComponent.SetActive(false);
                     break;
                 }
         }

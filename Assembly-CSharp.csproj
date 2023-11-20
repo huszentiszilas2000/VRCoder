@@ -61,6 +61,7 @@
     <Compile Include="Assets\RopeSocket.cs" />
     <Compile Include="Assets\Scripts\Operators\Operator.cs" />
     <Compile Include="Assets\RopeConnector.cs" />
+    <Compile Include="Assets\GameObjectControl.cs" />
     <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\CapsLockHighlight.cs" />
     <Compile Include="Assets\RopeSpawn.cs" />
     <Compile Include="Assets\Scripts\StartButton.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\NonNativeKeyboard.cs" />
     <Compile Include="Assets\Scripts\GameObjectControlling\GameObjectScript.cs" />
     <Compile Include="Assets\Scripts\XRRemoveSameSideCollider.cs" />
+    <Compile Include="Assets\tesztscriptchild.cs" />
     <Compile Include="Assets\Scripts\Variable\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\Variable\AddVariableScript.cs" />
     <Compile Include="Assets\Scripts\Interface\IResultBoolean.cs" />
@@ -112,8 +114,6 @@
     <Compile Include="Assets\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Variable\GetVariableGameObject.cs" />
     <Compile Include="Assets\Scripts\Variable\DeleteVariable.cs" />
-    <Compile Include="Assets\tesztscriptchild.cs" />
-    <Compile Include="Assets\GameObjectControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

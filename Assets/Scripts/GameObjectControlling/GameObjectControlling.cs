@@ -23,12 +23,17 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
             case GameObjectControllingType.SetPosition:
                 StartCoroutine(SetPosition());
                 break;
-            case GameObjectControllingType.SetRotation:
-                StartCoroutine(SetRotation());
+            case GameObjectControllingType.Rotate:
+                StartCoroutine(Rotate());
+                break;
+            case GameObjectControllingType.RotateTowards:
+                StartCoroutine(RotateTowards());
                 break;
             case GameObjectControllingType.SetScale:
+                StartCoroutine(SetScale());
                 break;
             case GameObjectControllingType.SetName:
+                StartCoroutine(SetName());
                 break;
             default:
                 break;
@@ -42,25 +47,25 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
         correctVariableObject = gameObjectControllerConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
         if (correctGameObjectObject == null)
         {
-            Debug.LogError("GameObjectControlling: GetPosition: Gameobject is not connected");
+            Debug.LogError("GameObjectControlling: SetPosition: Gameobject is not connected");
             yield break;
         }
 
         if (correctVariableObject == null)
         {
-            Debug.LogError("GameObjectControlling: GetPosition: Variable is not connected");
+            Debug.LogError("GameObjectControlling: SetPosition: Variable is not connected");
             yield break;
         }
 
         if (correctGameObjectObject.GetComponentInParent<GameObjectScript>() == null)
         {
-            Debug.LogError("GameObjectControlling: GetPosition: Wrong type attached");
+            Debug.LogError("GameObjectControlling: SetPosition: Wrong type attached");
             yield break;
         }
         GameObject correctGameObjectToMove = correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject;
         if (correctGameObjectToMove == null)
         {
-            Debug.LogError("GameObjectControlling: GetPosition: Missing gameobject in the variable");
+            Debug.LogError("GameObjectControlling: SetPosition: Missing gameobject in the variable");
             yield break;
         }
 
@@ -72,13 +77,16 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
             switch (xYZChoice)
             {
                 case XYZChoice.X:
-                    correctGameObjectToMove.GetComponent<Rigidbody>().MovePosition(new Vector3(correctGameObjectToMove.transform.position.x + float.Parse(value1), correctGameObjectToMove.transform.position.y, correctGameObjectToMove.transform.position.z));
+                    correctGameObjectToMove.GetComponent<GameObjectControl>().xPos = float.Parse(value1);
+                    correctGameObjectToMove.GetComponent<GameObjectControl>().SetPosition = true;
                     break;
                 case XYZChoice.Y:
-                    correctGameObjectToMove.GetComponent<Rigidbody>().MovePosition(new Vector3(correctGameObjectToMove.transform.position.x, correctGameObjectToMove.transform.position.y + float.Parse(value1), correctGameObjectToMove.transform.position.z));
+                    correctGameObjectToMove.GetComponent<GameObjectControl>().yPos = float.Parse(value1);
+                    correctGameObjectToMove.GetComponent<GameObjectControl>().SetPosition = true;
                     break;
                 case XYZChoice.Z:
-                    correctGameObjectToMove.GetComponent<Rigidbody>().MovePosition(new Vector3(correctGameObjectToMove.transform.position.x, correctGameObjectToMove.transform.position.y, correctGameObjectToMove.transform.position.z + float.Parse(value1)));
+                    correctGameObjectToMove.GetComponent<GameObjectControl>().zPos = float.Parse(value1);
+                    correctGameObjectToMove.GetComponent<GameObjectControl>().SetPosition = true;
                     break;
                 default:
                     yield break;
@@ -88,31 +96,149 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
         NextCall("SetPosition");
     }
 
-    public IEnumerator SetRotation()
+    public IEnumerator Rotate()
     {
         correctGameObjectObject = gameObjectControllerConnectors.GameObjectConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
         correctVariableObject = gameObjectControllerConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
         if (correctGameObjectObject == null)
         {
-            Debug.LogError("GameObjectControlling: SetRotation: Gameobject is not connected");
+            Debug.LogError("GameObjectControlling: Rotate: Gameobject is not connected");
             yield break;
         }
 
         if (correctVariableObject == null)
         {
-            Debug.LogError("GameObjectControlling: SetRotation: Variable is not connected");
+            Debug.LogError("GameObjectControlling: Rotate: Variable is not connected");
             yield break;
         }
 
         if (correctGameObjectObject.GetComponentInParent<GameObjectScript>() == null)
         {
-            Debug.LogError("GameObjectControlling: SetRotation: Wrong type attached");
+            Debug.LogError("GameObjectControlling: Rotate: Wrong type attached");
             yield break;
         }
-        GameObject correctGameObjectToMove = correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject;
-        if (correctGameObjectToMove == null)
+        GameObject correctGameObjectToRotate = correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject;
+        if (correctGameObjectToRotate == null)
         {
-            Debug.LogError("GameObjectControlling: SetRotation: Missing gameobject in the variable");
+            Debug.LogError("GameObjectControlling: Rotate: Missing gameobject in the variable");
+            yield break;
+        }
+
+        string value1 = Operator.GetValueString(correctVariableObject.gameObject);
+        Type typeOf = Operator.GetObjectToConvert(correctVariableObject.gameObject);
+
+        if (typeof(double) == typeOf)
+        {
+            correctGameObjectToRotate.GetComponent<GameObjectControl>().SmoothRotation = false;
+            switch (xYZChoice)
+            {
+                case XYZChoice.X:
+                    {
+                        correctGameObjectToRotate.GetComponent<GameObjectControl>().xRot = float.Parse(value1);
+                        break;
+                    }
+                case XYZChoice.Y:
+                    {
+                        correctGameObjectToRotate.GetComponent<GameObjectControl>().yRot = float.Parse(value1);
+                        break;
+                    }
+                case XYZChoice.Z:
+                    {
+                        correctGameObjectToRotate.GetComponent<GameObjectControl>().zRot = float.Parse(value1);
+                        break;
+                    }
+                default:
+                    yield break;
+            }
+        }
+
+        NextCall("Rotate");
+    }
+
+    public IEnumerator RotateTowards()
+    {
+        correctGameObjectObject = gameObjectControllerConnectors.GameObjectConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        correctVariableObject = gameObjectControllerConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (correctGameObjectObject == null)
+        {
+            Debug.LogError("GameObjectControlling: RotateTowards: Gameobject is not connected");
+            yield break;
+        }
+
+        if (correctVariableObject == null)
+        {
+            Debug.LogError("GameObjectControlling: RotateTowards: Variable is not connected");
+            yield break;
+        }
+
+        if (correctGameObjectObject.GetComponentInParent<GameObjectScript>() == null)
+        {
+            Debug.LogError("GameObjectControlling: RotateTowards: Wrong type attached");
+            yield break;
+        }
+        GameObject correctGameObjectToRotate = correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject;
+        if (correctGameObjectToRotate == null)
+        {
+            Debug.LogError("GameObjectControlling: RotateTowards: Missing gameobject in the variable");
+            yield break;
+        }
+
+        string value1 = Operator.GetValueString(correctVariableObject.gameObject);
+        Type typeOf = Operator.GetObjectToConvert(correctVariableObject.gameObject);
+
+        if (typeof(double) == typeOf)
+        {
+            correctGameObjectToRotate.GetComponent<GameObjectControl>().SmoothRotation = true;
+            switch (xYZChoice)
+            {
+                case XYZChoice.X:
+                    {
+                        correctGameObjectToRotate.GetComponent<GameObjectControl>().xRot = float.Parse(value1);
+                        break;
+                    }
+                case XYZChoice.Y:
+                    {
+                        correctGameObjectToRotate.GetComponent<GameObjectControl>().yRot = float.Parse(value1);
+                        break;
+                    }
+                case XYZChoice.Z:
+                    {
+                        correctGameObjectToRotate.GetComponent<GameObjectControl>().zRot = float.Parse(value1);
+                        break;
+                    }
+                default:
+                    yield break;
+            }
+        }
+
+        NextCall("RotateTowards");
+    }
+
+    public IEnumerator SetScale()
+    {
+        correctGameObjectObject = gameObjectControllerConnectors.GameObjectConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        correctVariableObject = gameObjectControllerConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (correctGameObjectObject == null)
+        {
+            Debug.LogError("GameObjectControlling: SetScale: Gameobject is not connected");
+            yield break;
+        }
+
+        if (correctVariableObject == null)
+        {
+            Debug.LogError("GameObjectControlling: SetScale: Variable is not connected");
+            yield break;
+        }
+
+        if (correctGameObjectObject.GetComponentInParent<GameObjectScript>() == null)
+        {
+            Debug.LogError("GameObjectControlling: SetScale: Wrong type attached");
+            yield break;
+        }
+        GameObject correctGameObjectToScale = correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject;
+        if (correctGameObjectToScale == null)
+        {
+            Debug.LogError("GameObjectControlling: SetScale: Missing gameobject in the variable");
             yield break;
         }
 
@@ -125,20 +251,17 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
             {
                 case XYZChoice.X:
                     {
-                        Vector3 rotationToAdd = new Vector3(float.Parse(value1),0,0);
-                        correctGameObjectToMove.transform.Rotate(rotationToAdd);
+                        correctGameObjectToScale.transform.localScale += new Vector3(float.Parse(value1), 0, 0);
                         break;
                     }
                 case XYZChoice.Y:
                     {
-                        Vector3 rotationToAdd = new Vector3(0, float.Parse(value1), 0);
-                        correctGameObjectToMove.transform.Rotate(rotationToAdd);
+                        correctGameObjectToScale.transform.localScale += new Vector3(0, float.Parse(value1), 0);
                         break;
                     }
                 case XYZChoice.Z:
                     {
-                        Vector3 rotationToAdd = new Vector3(0, 0, float.Parse(value1));
-                        correctGameObjectToMove.transform.Rotate(rotationToAdd);
+                        correctGameObjectToScale.transform.localScale += new Vector3(0, 0, float.Parse(value1));
                         break;
                     }
                 default:
@@ -146,7 +269,43 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
             }
         }
 
-        NextCall("SetRotation");
+        NextCall("SetScale");
+
+    }
+
+    public IEnumerator SetName()
+    {
+        correctGameObjectObject = gameObjectControllerConnectors.GameObjectConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        correctVariableObject = gameObjectControllerConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
+        if (correctGameObjectObject == null)
+        {
+            Debug.LogError("GameObjectControlling: SetName: Gameobject is not connected");
+            yield break;
+        }
+
+        if (correctVariableObject == null)
+        {
+            Debug.LogError("GameObjectControlling: SetName: Variable is not connected");
+            yield break;
+        }
+
+        if (correctGameObjectObject.GetComponentInParent<GameObjectScript>() == null)
+        {
+            Debug.LogError("GameObjectControlling: SetName: Wrong type attached");
+            yield break;
+        }
+        GameObject correctGameObjectToScale = correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject;
+        if (correctGameObjectToScale == null)
+        {
+            Debug.LogError("GameObjectControlling: SetName: Missing gameobject in the variable");
+            yield break;
+        }
+
+        string value1 = Operator.GetValueString(correctVariableObject.gameObject);
+
+        correctGameObjectToScale.name = value1;
+
+        NextCall("SetName");
     }
 
     public void NextCall(string previousCall)
@@ -337,7 +496,8 @@ public enum GameObjectControllingType
 {
    SetPosition,
    GetPosition,
-   SetRotation,
+   Rotate,
+   RotateTowards,
    GetRotation,
    SetScale,
    GetScale,
