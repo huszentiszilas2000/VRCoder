@@ -4027,7 +4027,7 @@ MonoBehaviour:
   plugObject: {fileID: 5210927528218624788, guid: 114ff13fa5c223949a814ba517ecd13a, type: 3}
   length: 3
   partDistance: 0.066
-  ropeSpawnCount: 0
+  ropeSpawnCount: 1
   spawn: 0
   firstPlug: 1
   lastPlug: 1
@@ -4711,7 +4711,7 @@ MonoBehaviour:
   plugObject: {fileID: 5990650524220816654, guid: 90bd66e06a2a6d948b0bf8d2c19d08f3, type: 3}
   length: 3
   partDistance: 0.1
-  ropeSpawnCount: 0
+  ropeSpawnCount: 1
   spawn: 0
   firstPlug: 1
   lastPlug: 1
@@ -10776,7 +10776,7 @@ MonoBehaviour:
   plugObject: {fileID: 3418178477542590445, guid: ad83b7127e0bd2a41bc354c69f5238d8, type: 3}
   length: 3
   partDistance: 0.066
-  ropeSpawnCount: 0
+  ropeSpawnCount: 1
   spawn: 0
   firstPlug: 1
   lastPlug: 1
@@ -46086,6 +46086,8 @@ GameObject:
   - component: {fileID: 6531733267092613617}
   - component: {fileID: 6531733267092613623}
   - component: {fileID: 1540251775555903105}
+  - component: {fileID: 7214138258953001858}
+  - component: {fileID: 1771888448292129432}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -46272,6 +46274,38 @@ MonoBehaviour:
   m_LocomotionProvider: {fileID: 6531733267092613617}
   m_MinHeight: 0
   m_MaxHeight: Infinity
+--- !u!114 &7214138258953001858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833315155083175721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9f116fae11f004eb9ec400ebbcf2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 8833315155484420046}
+  rightHand: {fileID: 8833315155582415359}
+  inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &1771888448292129432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833315155083175721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3c2bba5a4597e47a066879bb2ad452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 8833315155484420046}
+  rightHand: {fileID: 8833315155582415359}
+  gameObjectVariable: {fileID: 3431754115579831894, guid: 1dc51b70fe174da44971d788f3a8f53b, type: 3}
+  parentObject: {fileID: 6995308490446747527, guid: 65308b4bbb1bb3e4ba62a31917131258, type: 3}
+  inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &8833315155484420046
 GameObject:
   m_ObjectHideFlags: 0

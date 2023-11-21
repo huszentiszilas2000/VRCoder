@@ -17,13 +17,13 @@ public class GameObjectControl : MonoBehaviour
 
     private void Update()
     {
-        if (SetPosition && GetComponent<Rigidbody>().isKinematic == false)
+        if (SetPosition && GetComponent<Rigidbody>() != null && GetComponent<Rigidbody>().isKinematic == false)
         {
             GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector3(xPos, yPos, zPos));
             SetPosition = false;
         }
 
-        if (SetPosition && GetComponent<Rigidbody>().isKinematic == true)
+        if (SetPosition && ( GetComponent<Rigidbody>() == null || GetComponent<Rigidbody>().isKinematic == true ) )
         {
             Vector3 temp = transform.TransformDirection(new Vector3(xPos, yPos, zPos));
             transform.position += temp;

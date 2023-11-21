@@ -848,6 +848,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
         /// <param name="rigidbody">The <see cref="Rigidbody"/> on this object.</param>
         /// <seealso cref="SetupRigidbodyGrab"/>
         // ReSharper disable once ParameterHidesMember
+
         protected virtual void SetupRigidbodyDrop(Rigidbody rigidbody)
         {
             // Restore Rigidbody settings

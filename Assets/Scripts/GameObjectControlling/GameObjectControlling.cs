@@ -91,6 +91,9 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
                 default:
                     yield break;
             }
+            correctGameObjectToMove.GetComponent<GameObjectControl>().xPos = 0;
+            correctGameObjectToMove.GetComponent<GameObjectControl>().yPos = 0;
+            correctGameObjectToMove.GetComponent<GameObjectControl>().zPos = 0;
         }
 
         NextCall("SetPosition");

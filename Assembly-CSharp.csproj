@@ -72,7 +72,6 @@
     <Compile Include="Assets\Scripts\XRRemoveSameSideCollider.cs" />
     <Compile Include="Assets\tesztscriptchild.cs" />
     <Compile Include="Assets\Scripts\Variable\FPSCounter.cs" />
-    <Compile Include="Assets\Scripts\Variable\AddVariableScript.cs" />
     <Compile Include="Assets\Scripts\Interface\IResultBoolean.cs" />
     <Compile Include="Assets\Scripts\Operators\MathOperators.cs" />
     <Compile Include="Assets\ScriptsCoroutine\ITest.cs" />
@@ -113,7 +112,9 @@
     <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\UICollection.cs" />
     <Compile Include="Assets\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Variable\GetVariableGameObject.cs" />
-    <Compile Include="Assets\Scripts\Variable\DeleteVariable.cs" />
+    <Compile Include="Assets\Scripts\ItemHandling\DeleteItem.cs" />
+    <Compile Include="Assets\Scripts\ItemHandling\ParentingItem.cs" />
+    <Compile Include="Assets\Scripts\ItemHandling\CopyingItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
