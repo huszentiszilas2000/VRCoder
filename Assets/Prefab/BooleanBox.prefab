@@ -1390,7 +1390,7 @@ GameObject:
   - component: {fileID: 1277252721338845352}
   m_Layer: 8
   m_Name: BooleanBox
-  m_TagString: Untagged
+  m_TagString: GameComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2368,10 +2368,10 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 6292717537734694021}
+  m_AttachTransform: {fileID: 0}
   m_ChangeTransformParent: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 1
+  m_MovementType: 2
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

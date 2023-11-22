@@ -42,10 +42,17 @@ public class CopyingItem : MonoBehaviour
             toCopy = rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0].transform.gameObject;
             rightHand.GetComponent<XRDirectInteractor>().interactionManager.CancelInteractableSelection(rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0]);
         }
-        GameObject copied = Instantiate(toCopy, new Vector3(toCopy.transform.position.x + 1f, toCopy.transform.position.y, toCopy.transform.position.z), toCopy.transform.rotation);
+        if (toCopy.tag == "GameComponentNoCopy")
+            return;
 
-        GameObject objectComponent = Instantiate(gameObjectVariable, copied.transform.position, copied.transform.rotation);
-        objectComponent.GetComponent<GameObjectScript>().variableGameObject = copied;
-        objectComponent.transform.position = new Vector3(objectComponent.transform.position.x, objectComponent.transform.position.y + 0.5f, objectComponent.transform.position.z);
+        GameObject copied = Instantiate(toCopy, new Vector3(toCopy.transform.position.x + 0.5f, toCopy.transform.position.y, toCopy.transform.position.z), toCopy.transform.rotation);
+
+        if (copied.tag != "GameComponent")
+        {
+            GameObject objectComponent = Instantiate(gameObjectVariable, copied.transform.position, copied.transform.rotation);
+            objectComponent.GetComponent<GameObjectScript>().variableGameObject = copied;
+            objectComponent.transform.position = new Vector3(objectComponent.transform.position.x, objectComponent.transform.position.y + 0.5f, objectComponent.transform.position.z);
+
+        }
     }
 }

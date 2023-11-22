@@ -848,7 +848,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6772
+  m_VersionIndex: 6775
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 4868932057137655640}
   m_Layer: 8
   m_Name: VariableBox
-  m_TagString: Untagged
+  m_TagString: GameComponentNoCopy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3406
+  m_VersionIndex: 3409
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2727,7 +2727,7 @@ GameObject:
   - component: {fileID: 1481024315617561828}
   m_Layer: 8
   m_Name: VariableBoxReal
-  m_TagString: Untagged
+  m_TagString: GameComponentNoCopy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -747,7 +747,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
             var thisTransform = transform;
             m_OriginalSceneParent = thisTransform.parent;
 
-            if(m_ChangeTransformParent)
+            if (m_ChangeTransformParent)
                 thisTransform.SetParent(null);
 
             UpdateCurrentMovementType();

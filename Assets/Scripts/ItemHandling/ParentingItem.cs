@@ -35,9 +35,9 @@ public class ParentingItem : MonoBehaviour
         leftHand.GetComponent<XRDirectInteractor>().interactionManager.CancelInteractableSelection(leftHand.GetComponent<XRDirectInteractor>().interactablesSelected[0]);
         rightHand.GetComponent<XRDirectInteractor>().interactionManager.CancelInteractableSelection(rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0]);
 
-        if (leftHeldObject.transform.root.gameObject == leftHeldObject)
+        if (leftHeldObject.tag != "ParentGameObject")
         {
-            GameObject parent = Instantiate(parentObject, new Vector3(leftHeldObject.transform.position.x, leftHeldObject.transform.position.y, leftHeldObject.transform.position.z), Quaternion.identity);
+            GameObject parent = Instantiate(parentObject, new Vector3(leftHeldObject.transform.position.x, leftHeldObject.transform.position.y, leftHeldObject.transform.position.z), leftHeldObject.transform.rotation);
             leftHeldObject.transform.SetParent(parent.transform);
             rightHeldObject.transform.SetParent(parent.transform);
             parent.GetComponent<XRGrab>().colliders.Add(leftHeldObject.GetComponent<Collider>());
@@ -60,7 +60,12 @@ public class ParentingItem : MonoBehaviour
         }
         else
         {
-
+            rightHeldObject.transform.SetParent(leftHeldObject.transform);
+            leftHeldObject.GetComponent<XRGrab>().colliders.Add(rightHeldObject.GetComponent<Collider>());
+            Destroy(rightHeldObject.GetComponent<XRGrab>());
+            Destroy(rightHeldObject.GetComponent<Rigidbody>());
+            leftHeldObject.GetComponent<XRGrab>().interactionManager.UnregisterInteractable(leftHeldObject.GetComponent<XRGrab>().GetComponent<IXRInteractable>());
+            leftHeldObject.GetComponent<XRGrab>().interactionManager.RegisterInteractable(leftHeldObject.GetComponent<XRGrab>().GetComponent<IXRInteractable>());
         }
     }
 }

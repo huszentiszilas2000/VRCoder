@@ -21,6 +21,9 @@ public class GameObjectControl : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector3(xPos, yPos, zPos));
             SetPosition = false;
+            xPos = 0;
+            yPos = 0;
+            zPos = 0;
         }
 
         if (SetPosition && ( GetComponent<Rigidbody>() == null || GetComponent<Rigidbody>().isKinematic == true ) )
@@ -28,10 +31,18 @@ public class GameObjectControl : MonoBehaviour
             Vector3 temp = transform.TransformDirection(new Vector3(xPos, yPos, zPos));
             transform.position += temp;
             SetPosition = false;
+            xPos = 0;
+            yPos = 0;
+            zPos = 0;
         }
 
         if (SmoothRotation)
+        {
+            Debug.Log(transform.rotation.eulerAngles.x );
+            Debug.Log(transform.rotation.eulerAngles.y );
+            Debug.Log(transform.rotation.eulerAngles.z );
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(xRot, yRot, zRot), 100f * Time.deltaTime);
+        }
         else
             transform.Rotate(new Vector3(xRot, yRot, zRot));
     }

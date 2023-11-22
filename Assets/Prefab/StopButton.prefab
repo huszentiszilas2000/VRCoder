@@ -2055,7 +2055,7 @@ GameObject:
   - component: {fileID: 9127472335094733482}
   m_Layer: 8
   m_Name: StopButton
-  m_TagString: Untagged
+  m_TagString: GameComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
