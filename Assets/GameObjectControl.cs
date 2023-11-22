@@ -6,6 +6,7 @@ public class GameObjectControl : MonoBehaviour
 {
     public bool SetPosition = false;
     public bool SmoothRotation = false;
+    public bool Rotate = false;
 
     public float xRot;
     public float yRot;
@@ -15,8 +16,15 @@ public class GameObjectControl : MonoBehaviour
     public float yPos;
     public float zPos;
 
+    public bool Debug = false;
+
     private void Update()
     {
+        if( Debug )
+        {
+            transform.Rotate(new Vector3(xRot, yRot, zRot));
+            Debug = false;
+        }
         if (SetPosition && GetComponent<Rigidbody>() != null && GetComponent<Rigidbody>().isKinematic == false)
         {
             GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector3(xPos, yPos, zPos));
@@ -35,15 +43,16 @@ public class GameObjectControl : MonoBehaviour
             yPos = 0;
             zPos = 0;
         }
-
-        if (SmoothRotation)
+        
+        if (SmoothRotation && Rotate)
         {
-            Debug.Log(transform.rotation.eulerAngles.x );
-            Debug.Log(transform.rotation.eulerAngles.y );
-            Debug.Log(transform.rotation.eulerAngles.z );
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(xRot, yRot, zRot), 100f * Time.deltaTime);
+            transform.Rotate(new Vector3(xRot, yRot, zRot));
+            /*if (transform.rotation.eulerAngles.x == xRot && transform.rotation.eulerAngles.y == yRot && transform.rotation.eulerAngles.z == zRot)
+                Rotate = false;
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(xRot, yRot, zRot), 100f * Time.deltaTime);*/
         }
-        else
+        else if( !SmoothRotation && Rotate)
             transform.Rotate(new Vector3(xRot, yRot, zRot));
     }
 }
