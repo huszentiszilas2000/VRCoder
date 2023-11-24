@@ -1,10 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Components : Component, IComponent
+public class Components : MonoBehaviour, IComponent
 {
     [SerializeField]
     ComponentType componentType;
@@ -72,12 +69,6 @@ public class Components : Component, IComponent
 
     public void OnChangeComponentPressed()
     {
-        if (componentConnectors.HasConnection() == true)
-        {
-            Debug.LogError("Cannot change component with connections!");
-            return;
-        }
-
         if(componentType == ComponentType.SetVariable)
         {
             componentType = 0;
@@ -89,7 +80,6 @@ public class Components : Component, IComponent
     }
 
 
-    //Working 
     public IEnumerator DebugComponent()
     {
         if (componentConnectors.VariableConnector.GetComponent<RopeSocket>().ropeObject == null)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -9,8 +7,8 @@ public class DeleteItem : MonoBehaviour
     private InputAction deleteInputLeft;
     private InputAction deleteInputRight;
 
-    public GameObject leftHand;
-    public GameObject rightHand;
+    public XRDirectInteractor leftHandInteractor;
+    public XRDirectInteractor rightHandInteractor;
 
     public InputActionAsset inputActions;
 
@@ -27,18 +25,18 @@ public class DeleteItem : MonoBehaviour
 
     public void DeleteItemRight(InputAction.CallbackContext context)
     {
-        if (rightHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count == 0)
+        if (rightHandInteractor.interactablesSelected.Count == 0)
             return;
 
-        DeleteHeldItem(rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0].transform.gameObject);
+        DeleteHeldItem(rightHandInteractor.interactablesSelected[0].transform.gameObject);
     }
 
     public void DeleteItemLeft(InputAction.CallbackContext context)
     {
-        if (leftHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count == 0)
+        if (leftHandInteractor.interactablesSelected.Count == 0)
             return;
 
-        DeleteHeldItem(leftHand.GetComponent<XRDirectInteractor>().interactablesSelected[0].transform.gameObject);
+        DeleteHeldItem(leftHandInteractor.interactablesSelected[0].transform.gameObject);
     }
 
     public void DeleteHeldItem(GameObject itemHeld)

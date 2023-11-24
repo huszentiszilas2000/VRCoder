@@ -8,8 +8,8 @@ public class ParentingItem : MonoBehaviour
 {
     private InputAction ParentingInput;
 
-    public GameObject leftHand;
-    public GameObject rightHand;
+    public XRDirectInteractor leftHandInteractor;
+    public XRDirectInteractor rightHandInteractor;
 
 
     public GameObject gameObjectVariable;
@@ -26,14 +26,14 @@ public class ParentingItem : MonoBehaviour
 
     public void Parenting(InputAction.CallbackContext callbackContext)
     {
-        if (leftHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count == 0 || rightHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count == 0)
+        if (leftHandInteractor.interactablesSelected.Count == 0 || rightHandInteractor.interactablesSelected.Count == 0)
             return;
 
-        GameObject leftHeldObject = leftHand.GetComponent<XRDirectInteractor>().interactablesSelected[0].transform.gameObject;
-        GameObject rightHeldObject = rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0].transform.gameObject;
+        GameObject leftHeldObject = leftHandInteractor.interactablesSelected[0].transform.gameObject;
+        GameObject rightHeldObject = rightHandInteractor.interactablesSelected[0].transform.gameObject;
 
-        leftHand.GetComponent<XRDirectInteractor>().interactionManager.CancelInteractableSelection(leftHand.GetComponent<XRDirectInteractor>().interactablesSelected[0]);
-        rightHand.GetComponent<XRDirectInteractor>().interactionManager.CancelInteractableSelection(rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0]);
+        leftHandInteractor.interactionManager.CancelInteractableSelection(leftHandInteractor.interactablesSelected[0]);
+        rightHandInteractor.interactionManager.CancelInteractableSelection(rightHandInteractor.interactablesSelected[0]);
 
         if (leftHeldObject.tag != "ParentGameObject")
         {

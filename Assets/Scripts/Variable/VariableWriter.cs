@@ -19,8 +19,4 @@ public class VariableWriter : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
-
-    /*void FixedUpdate()
-    {
-    }*/
 }

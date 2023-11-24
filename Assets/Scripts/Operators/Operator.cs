@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Operator : MonoBehaviour
@@ -22,7 +20,7 @@ public class Operator : MonoBehaviour
         if (gameObject == null)
             return null;
 
-        System.Object object1 = VisualCompiler.ConvertValueToCorrectObject(Operator.GetValueString(gameObject));
+        System.Object object1 = ConvertValueToCorrectObject(Operator.GetValueString(gameObject));
 
         if(object1 == null)
             return null;
@@ -40,8 +38,8 @@ public class Operator : MonoBehaviour
 
     public static Type GetObjectsToConvert(GameObject gameObject, GameObject gameObject2)
     {
-        System.Object object1 = VisualCompiler.ConvertValueToCorrectObject(Operator.GetValueString(gameObject));
-        System.Object object2 = VisualCompiler.ConvertValueToCorrectObject(Operator.GetValueString(gameObject2));
+        System.Object object1 = ConvertValueToCorrectObject(Operator.GetValueString(gameObject));
+        System.Object object2 = ConvertValueToCorrectObject(Operator.GetValueString(gameObject2));
 
         if (object1.GetType() == typeof(string) || object2.GetType() == typeof(string))
             return typeof(string);
@@ -51,6 +49,18 @@ public class Operator : MonoBehaviour
         {
             Debug.LogError("Assert: Wrong Type somehow???");
             return typeof(System.Object);
+        }
+    }
+
+    public static System.Object ConvertValueToCorrectObject(string value)
+    {
+        if (double.TryParse(value, out double d) == true)
+        {
+            return d;
+        }
+        else
+        {
+            return value;
         }
     }
 }

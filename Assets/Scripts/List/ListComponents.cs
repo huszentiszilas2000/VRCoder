@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ListComponents : MonoBehaviour, IComponent, IResult
@@ -394,12 +393,6 @@ public class ListComponents : MonoBehaviour, IComponent, IResult
 
     public void OnChangeListComponentPressed()
     {
-        if (listComponentConnectors.HasConnection() == true)
-        {
-            Debug.LogError("Cannot change component with connections!");
-            return;
-        }
-
         if (listComponentType == ListComponentType.Length)
         {
             listComponentType = 0;

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameObjectControlling : MonoBehaviour, IComponent, IResult
@@ -15,7 +14,8 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
     GameObject correctVariableObject;
     GameObject correctNextCallObject;
 
-    public bool DebugChange = false;
+    [SerializeField]
+    bool DebugChange = false;
     public IEnumerator RunComponent()
     {
         switch (gameObjectControllingType)
@@ -26,8 +26,8 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
             case GameObjectControllingType.Rotate:
                 StartCoroutine(Rotate());
                 break;
-            case GameObjectControllingType.RotateTowards:
-                StartCoroutine(RotateTowards());
+            case GameObjectControllingType.RotateByDegress:
+                StartCoroutine(RotateByDegress());
                 break;
             case GameObjectControllingType.SetScale:
                 StartCoroutine(SetScale());
@@ -130,7 +130,7 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
 
         if (typeof(double) == typeOf)
         {
-            correctGameObjectToRotate.GetComponent<GameObjectControl>().SmoothRotation = false;
+            correctGameObjectToRotate.GetComponent<GameObjectControl>().Rotate = true;
             switch (xYZChoice)
             {
                 case XYZChoice.X:
@@ -156,7 +156,7 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
         NextCall("Rotate");
     }
 
-    public IEnumerator RotateTowards()
+    public IEnumerator RotateByDegress()
     {
         correctGameObjectObject = gameObjectControllerConnectors.GameObjectConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
         correctVariableObject = gameObjectControllerConnectors.VariableConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
@@ -189,22 +189,22 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
 
         if (typeof(double) == typeOf)
         {
-            correctGameObjectToRotate.GetComponent<GameObjectControl>().SmoothRotation = true;
+            correctGameObjectToRotate.GetComponent<GameObjectControl>().Rotate = false;
             switch (xYZChoice)
             {
                 case XYZChoice.X:
                     {
-                        correctGameObjectToRotate.GetComponent<GameObjectControl>().xRot = float.Parse(value1);
+                        correctGameObjectToRotate.transform.Rotate(float.Parse(value1),0,0);
                         break;
                     }
                 case XYZChoice.Y:
                     {
-                        correctGameObjectToRotate.GetComponent<GameObjectControl>().yRot = float.Parse(value1);
+                        correctGameObjectToRotate.transform.Rotate(0,float.Parse(value1),0);
                         break;
                     }
                 case XYZChoice.Z:
                     {
-                        correctGameObjectToRotate.GetComponent<GameObjectControl>().zRot = float.Parse(value1);
+                        correctGameObjectToRotate.transform.Rotate(0,0,float.Parse(value1));
                         break;
                     }
                 default:
@@ -212,7 +212,7 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
             }
         }
 
-        NextCall("RotateTowards");
+        NextCall("RotateByDegress");
     }
 
     public IEnumerator SetScale()
@@ -410,11 +410,11 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
         switch (xYZChoice)
         {
             case XYZChoice.X:
-                return correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject.transform.rotation.x;
+                return correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject.transform.eulerAngles.x;
             case XYZChoice.Y:
-                return correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject.transform.rotation.y;
+                return correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject.transform.eulerAngles.y;
             case XYZChoice.Z:
-                return correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject.transform.rotation.z;
+                return correctGameObjectObject.GetComponentInParent<GameObjectScript>().variableGameObject.transform.eulerAngles.z;
             default:
                 return 0f;
         }
@@ -475,12 +475,6 @@ public class GameObjectControlling : MonoBehaviour, IComponent, IResult
 
     public void OnChangeGameObjectControllerPressed()
     {
-        if (gameObjectControllerConnectors.HasConnection() == true)
-        {
-            Debug.LogError("Cannot change gameobject controller with connections!");
-            return;
-        }
-
         if (gameObjectControllingType == GameObjectControllingType.SetName)
         {
             gameObjectControllingType = 0;
@@ -498,7 +492,7 @@ public enum GameObjectControllingType
    SetPosition,
    GetPosition,
    Rotate,
-   RotateTowards,
+   RotateByDegress,
    GetRotation,
    SetScale,
    GetScale,

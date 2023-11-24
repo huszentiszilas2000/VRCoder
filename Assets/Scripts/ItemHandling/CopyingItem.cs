@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -7,14 +5,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CopyingItem : MonoBehaviour
 {
     private InputAction CopyingInput;
+    public InputActionAsset inputActions;
 
-    public GameObject leftHand;
-    public GameObject rightHand;
-
+    public XRDirectInteractor leftHandInteractor;
+    public XRDirectInteractor rightHandInteractor;
 
     public GameObject gameObjectVariable;
-
-    public InputActionAsset inputActions;
 
     void Start()
     {
@@ -25,22 +21,22 @@ public class CopyingItem : MonoBehaviour
 
     void Copying(InputAction.CallbackContext callbackContext)
     {
-        if (leftHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count != 0 && rightHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count != 0)
+        if (leftHandInteractor.interactablesSelected.Count != 0 && rightHandInteractor.interactablesSelected.Count != 0)
             return;
 
-        if (leftHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count == 0 && rightHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count == 0)
+        if (leftHandInteractor.interactablesSelected.Count == 0 && rightHandInteractor.interactablesSelected.Count == 0)
             return;
 
         GameObject toCopy;
-        if (leftHand.GetComponent<XRDirectInteractor>().interactablesSelected.Count != 0)
+        if (leftHandInteractor.interactablesSelected.Count != 0)
         {
-            toCopy = leftHand.GetComponent<XRDirectInteractor>().interactablesSelected[0].transform.gameObject;
-            leftHand.GetComponent<XRDirectInteractor>().interactionManager.CancelInteractableSelection(leftHand.GetComponent<XRDirectInteractor>().interactablesSelected[0]);
+            toCopy = leftHandInteractor.interactablesSelected[0].transform.gameObject;
+            leftHandInteractor.interactionManager.CancelInteractableSelection(leftHandInteractor.interactablesSelected[0]);
         }
         else
         {
-            toCopy = rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0].transform.gameObject;
-            rightHand.GetComponent<XRDirectInteractor>().interactionManager.CancelInteractableSelection(rightHand.GetComponent<XRDirectInteractor>().interactablesSelected[0]);
+            toCopy = rightHandInteractor.interactablesSelected[0].transform.gameObject;
+            rightHandInteractor.interactionManager.CancelInteractableSelection(rightHandInteractor.interactablesSelected[0]);
         }
         if (toCopy.tag == "GameComponentNoCopy")
             return;

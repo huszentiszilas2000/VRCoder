@@ -11365,7 +11365,7 @@ MonoBehaviour:
   m_ValidColorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 0}
+    key1: {r: 1, g: 0, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -11394,7 +11394,7 @@ MonoBehaviour:
   m_InvalidColorGradient:
     serializedVersion: 2
     key0: {r: 0, g: 0, b: 0, a: 1}
-    key1: {r: 0, g: 0, b: 0, a: 0}
+    key1: {r: 0, g: 0, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -46274,8 +46274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9f116fae11f004eb9ec400ebbcf2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 8833315155484420046}
-  rightHand: {fileID: 8833315155582415359}
+  leftHandInteractor: {fileID: 4679362484699178785}
+  rightHandInteractor: {fileID: 1209660566505012570}
   inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1771888448292129432
 MonoBehaviour:
@@ -46289,8 +46289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3c2bba5a4597e47a066879bb2ad452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 8833315155484420046}
-  rightHand: {fileID: 8833315155582415359}
+  leftHandInteractor: {fileID: 4679362484699178785}
+  rightHandInteractor: {fileID: 1209660566505012570}
   gameObjectVariable: {fileID: 3431754115579831894, guid: 1dc51b70fe174da44971d788f3a8f53b, type: 3}
   parentObject: {fileID: 6995308490446747527, guid: 65308b4bbb1bb3e4ba62a31917131258, type: 3}
   inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -46306,10 +46306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6d2b7914c3b7440b1b310b4330edfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 8833315155484420046}
-  rightHand: {fileID: 8833315155582415359}
-  gameObjectVariable: {fileID: 3431754115579831894, guid: 1dc51b70fe174da44971d788f3a8f53b, type: 3}
   inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftHandInteractor: {fileID: 4679362484699178785}
+  rightHandInteractor: {fileID: 1209660566505012570}
+  gameObjectVariable: {fileID: 3431754115579831894, guid: 1dc51b70fe174da44971d788f3a8f53b, type: 3}
 --- !u!114 &1276923033
 MonoBehaviour:
   m_ObjectHideFlags: 0

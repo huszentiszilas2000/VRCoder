@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -14,17 +12,7 @@ public class ComponentConnectors : MonoBehaviour
     public GameObject SecondInsideCallConnector;
     public GameObject NextCallConnector;
 
-    public bool BoolConnected, VariableConnected, PreviousConnected, InsideConnected, SecondInsideConnected, NextConnected;
-
     public TMP_Text ComponentName;
-
-    public bool HasConnection()
-    {
-        if (BoolConnected || VariableConnected || PreviousConnected || InsideConnected || SecondInsideConnected || NextConnected)
-            return true;
-
-        return false;
-    }
 
     public void ChangeComponents(ComponentType componentType)
     {

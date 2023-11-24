@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -16,17 +14,8 @@ public class GameObjectControllerConnectors : MonoBehaviour
 
     public GameObject XYZComponent;
 
-    public bool VariableConnected, GameObjectConnected, VariableOutConnected, PreviousComponentConnected, NextComponentConnected;
-
     public TMP_Text ComponentName;
 
-    public bool HasConnection()
-    {
-        if (VariableConnected || GameObjectConnected || VariableOutConnected || PreviousComponentConnected || NextComponentConnected)
-            return true;
-
-        return false;
-    }
     public void ChangeGameObjectController(GameObjectControllingType gameObjectControllingType)
     {
         switch (gameObjectControllingType)
@@ -77,7 +66,7 @@ public class GameObjectControllerConnectors : MonoBehaviour
                 }
             case GameObjectControllingType.Rotate:
                 {
-                    ComponentName.text = "Rotate";
+                    ComponentName.text = "RotateContinously";
                     VariableConnector.SetActive(true);
                     GameObjectConnector.SetActive(true);
                     VariableOutConnector.SetActive(false);
@@ -86,9 +75,9 @@ public class GameObjectControllerConnectors : MonoBehaviour
                     XYZComponent.SetActive(true);
                     break;
                 }
-            case GameObjectControllingType.RotateTowards:
+            case GameObjectControllingType.RotateByDegress:
                 {
-                    ComponentName.text = "RotateTo";
+                    ComponentName.text = "RotateByDegress";
                     VariableConnector.SetActive(true);
                     GameObjectConnector.SetActive(true);
                     VariableOutConnector.SetActive(false);

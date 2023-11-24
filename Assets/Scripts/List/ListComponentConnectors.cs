@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -15,17 +13,8 @@ public class ListComponentConnectors : MonoBehaviour
     public GameObject PreviousComponentConnector;
     public GameObject NextComponentConnector;
 
-    public bool ListConnected, VariableConnected, SecondVeriableConnected, OutVariableConnected, PreviousComponentConnected, NextComponentConnected;
-
     public TMP_Text ComponentName;
 
-    public bool HasConnection()
-    {
-        if (ListConnected  || SecondVeriableConnected || VariableConnected || OutVariableConnected || PreviousComponentConnected || NextComponentConnected)
-            return true;
-
-        return false;
-    }
     public void ChangeListComponent(ListComponentType listComponentType)
     {
         switch (listComponentType)
