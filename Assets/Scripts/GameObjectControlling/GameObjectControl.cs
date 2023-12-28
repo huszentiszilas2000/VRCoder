@@ -31,7 +31,7 @@ public class GameObjectControl : MonoBehaviour
             zPos = 0;
         }
 
-        if (SetPosition && ( GetComponent<Rigidbody>() == null || GetComponent<Rigidbody>().isKinematic == true ) )
+        if (SetPosition && ( GetComponent<Rigidbody>() == null || GetComponent<Rigidbody>().isKinematic == true))
         {
             Vector3 temp = transform.TransformDirection(new Vector3(xPos, yPos, zPos));
             transform.position += temp;
