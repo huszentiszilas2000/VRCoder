@@ -30,7 +30,6 @@ public class GameObjectControl : MonoBehaviour
             yPos = 0;
             zPos = 0;
         }
-
         if (SetPosition && ( GetComponent<Rigidbody>() == null || GetComponent<Rigidbody>().isKinematic == true))
         {
             Vector3 temp = transform.TransformDirection(new Vector3(xPos, yPos, zPos));
@@ -40,17 +39,22 @@ public class GameObjectControl : MonoBehaviour
             yPos = 0;
             zPos = 0;
         }
+        if (Rotate)
+            transform.Rotate(new Vector3(xRot, yRot, zRot));
 
         /*if (SmoothRotation)
         {
             transform.Rotate(new Vector3(xRot, yRot, zRot));
             SmoothRotation = false;
-            /*if (transform.rotation.eulerAngles.x == xRot && transform.rotation.eulerAngles.y == yRot && transform.rotation.eulerAngles.z == zRot)
+            /*if (transform.rotation.eulerAngles.x == xRot 
+               && transform.rotation.eulerAngles.y == yRot 
+               && transform.rotation.eulerAngles.z == zRot)
                 Rotate = false;
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(xRot, yRot, zRot), 100f * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, 
+                                                          Quaternion.Euler(xRot, yRot, zRot),
+                                                          100f * Time.deltaTime);
         }*/
-        if(Rotate)
-            transform.Rotate(new Vector3(xRot, yRot, zRot));
+
     }
 }

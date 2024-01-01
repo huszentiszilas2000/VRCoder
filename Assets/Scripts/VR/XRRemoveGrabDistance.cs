@@ -17,7 +17,8 @@ public class XRRemoveGrabDistance : MonoBehaviour
     {
         if (xRDirectInteractor.interactablesSelected.Count > 0)
         {
-            if (Vector3.Distance(this.transform.position, xRDirectInteractor.interactablesSelected[0].transform.position) > distanceDetach)
+            if (Vector3.Distance(this.transform.position,
+                                xRDirectInteractor.interactablesSelected[0].transform.position) > distanceDetach)
             {
                 xRDirectInteractor.interactionManager.CancelInteractableSelection(xRDirectInteractor.interactablesSelected[0]);
             }

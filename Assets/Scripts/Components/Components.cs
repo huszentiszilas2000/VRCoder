@@ -190,6 +190,7 @@ public class Components : MonoBehaviour, IComponent
         yield return null;
     }
 
+
     public IEnumerator LoopUntilComponent()
     {
         insideCallCorrectObject = componentConnectors.InsideCallConnector.GetComponent<RopeSocket>().GetComponentCorrect(gameObject);
